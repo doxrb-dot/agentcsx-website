@@ -3,13 +3,115 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agentcsx — AI-Powered Client Finding Agent for LinkedIn</title>
-  <meta name="description" content="Discover, connect, and manage high-value leads on LinkedIn with AI-powered automation. Agentcsx finds your ideal clients while you sleep.">
-  <meta name="keywords" content="LinkedIn automation, lead generation, AI sales agent, client finder, Chrome extension">
-  <meta property="og:title" content="Agentcsx — AI Client Finding Agent">
-  <meta property="og:description" content="Find your ideal clients on LinkedIn with AI-powered automation.">
+
+  <!-- SEO #9: Improved title + description -->
+  <title>Agentcsx — AI-Powered LinkedIn Lead Generation & Client Finding Agent</title>
+  <meta name="description" content="Agentcsx is a free AI-powered Chrome extension that discovers, scores, and connects with high-value LinkedIn leads automatically. The ultimate lead generation tool for sales professionals, founders, and agencies.">
+  <meta name="keywords" content="LinkedIn automation, lead generation, AI sales agent, client finder, Chrome extension, LinkedIn leads, sales automation, warm outreach, B2B lead generation">
+
+  <!-- SEO #3: Canonical URL -->
+  <link rel="canonical" href="https://agentcsx.com/">
+
+  <!-- SEO #5: Open Graph -->
+  <meta property="og:title" content="Agentcsx — AI-Powered LinkedIn Lead Generation Agent">
+  <meta property="og:description" content="Find your ideal clients on LinkedIn with AI-powered automation. Discover, score, and connect with high-value leads while you sleep.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://agentcsx.com/">
+  <meta property="og:image" content="https://agentcsx.com/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Agentcsx">
+
+  <!-- SEO #6: Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Agentcsx — AI Client Finding Agent for LinkedIn">
+  <meta name="twitter:description" content="Discover, score, and connect with high-value LinkedIn leads automatically. Free Chrome extension.">
+  <meta name="twitter:image" content="https://agentcsx.com/assets/og-image.png">
+
+  <!-- SEO #14: Google Search Console (replace YOUR_TOKEN) -->
+  <meta name="google-site-verification" content="m5QCsAfvMyW1fgQ8NEgHWKSG3iyHbztQYticRdYwpuo">
+
+  <!-- SEO #4: Structured Data — SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Agentcsx",
+    "description": "AI-powered Chrome extension that discovers, scores, and connects with high-value LinkedIn leads automatically.",
+    "url": "https://agentcsx.com",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Chrome, Edge, Brave",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "50",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Agentcsx"
+    }
+  }
+  </script>
+
+  <!-- SEO #8: FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is Agentcsx free to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Agentcsx is 100% free to use. Install the Chrome extension and start finding leads immediately with no credit card required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Agentcsx safe for my LinkedIn account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Agentcsx has built-in daily safety limits that protect your LinkedIn account from being flagged. It mimics natural human behavior and respects LinkedIn's rate limits."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does Agentcsx find leads?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Agentcsx uses AI to search LinkedIn by role, company, industry, location, or content engagement. It scores each lead 0-100 based on relevance and fit, so you can focus on the hottest prospects first."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Agentcsx work with browsers other than Chrome?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Agentcsx works with all Chromium-based browsers including Google Chrome, Microsoft Edge, Brave, and Opera."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Agentcsx send connection requests automatically?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Agentcsx can send personalized connection requests with AI-generated notes tailored to each lead's profile, company, and role. Built-in daily limits keep your account safe."
+        }
+      }
+    ]
+  }
+  </script>
+
   <link rel="icon" type="image/png" href="assets/icon48.png">
+  <!-- SEO #13: Preload hero image -->
+  <link rel="preload" as="image" href="assets/screenshot-dashboard.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -19,16 +121,18 @@
   <!-- ═══════════ NAVBAR ═══════════ -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="#" class="nav-logo">
-        <img src="assets/icon48.png" alt="Agentcsx" class="nav-logo-img">
+      <a href="/" class="nav-logo">
+        <img src="assets/icon48.png" alt="Agentcsx logo" class="nav-logo-img">
         <span class="nav-logo-text">agent<span class="gradient-text">csx</span></span>
       </a>
       <div class="nav-links">
         <a href="#features">Features</a>
         <a href="#how-it-works">How It Works</a>
+        <a href="#faq">FAQ</a>
+        <a href="blog/">Blog</a>
         <a href="#pricing">Pricing</a>
       </div>
-      <a href="https://chromewebstore.google.com/search/agentcsx" target="_blank" class="btn btn-nav">Add to Chrome — Free</a>
+      <a href="https://chromewebstore.google.com/search/agentcsx" target="_blank" rel="noopener" class="btn btn-nav">Add to Chrome — Free</a>
     </div>
   </nav>
 
@@ -54,7 +158,7 @@
         high-value leads on LinkedIn — automatically. Stop cold outreach. Start warm connections.
       </p>
       <div class="hero-cta">
-        <a href="https://chromewebstore.google.com/search/agentcsx" target="_blank" class="btn btn-primary btn-lg" id="hero-cta">
+        <a href="https://chromewebstore.google.com/search/agentcsx" target="_blank" rel="noopener" class="btn btn-primary btn-lg" id="hero-cta">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
           Add to Chrome — It's Free
         </a>
@@ -83,7 +187,8 @@
     <div class="hero-screenshot">
       <div class="screenshot-glow"></div>
       <div class="screenshot-frame">
-        <img src="assets/screenshot-dashboard.png" alt="Agentcsx Dashboard" class="screenshot-img" loading="lazy">
+        <!-- SEO #11: Keyword-rich alt text -->
+        <img src="assets/screenshot-dashboard.png" alt="Agentcsx AI lead generation dashboard showing scored LinkedIn leads with connection status and campaign management" class="screenshot-img" loading="lazy">
       </div>
     </div>
   </section>
@@ -93,13 +198,13 @@
     <div class="container">
       <p class="proof-text">Trusted by sales professionals, founders, and agencies worldwide</p>
       <div class="proof-logos">
-        <div class="proof-item">⭐⭐⭐⭐⭐ <span>5.0 on Chrome Store</span></div>
+        <div class="proof-item">&#11088;&#11088;&#11088;&#11088;&#11088; <span>5.0 on Chrome Store</span></div>
         <div class="proof-divider"></div>
-        <div class="proof-item">🔒 <span>Privacy First</span></div>
+        <div class="proof-item">&#128274; <span>Privacy First</span></div>
         <div class="proof-divider"></div>
-        <div class="proof-item">⚡ <span>No LinkedIn Limits Violated</span></div>
+        <div class="proof-item">&#9889; <span>No LinkedIn Limits Violated</span></div>
         <div class="proof-divider"></div>
-        <div class="proof-item">🧠 <span>AI-Powered Scoring</span></div>
+        <div class="proof-item">&#129504; <span>AI-Powered Scoring</span></div>
       </div>
     </div>
   </section>
@@ -109,7 +214,8 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Features</span>
-        <h2 class="section-title">Everything You Need to<br><span class="gradient-text">Close More Deals</span></h2>
+        <!-- SEO #10: H2 with keywords -->
+        <h2 class="section-title">AI-Powered LinkedIn Lead Generation<br><span class="gradient-text">Everything You Need to Close More Deals</span></h2>
         <p class="section-subtitle">Agentcsx handles the entire top-of-funnel so you can focus on conversations that convert.</p>
       </div>
 
@@ -120,7 +226,7 @@
           </div>
           <h3>AI Lead Discovery</h3>
           <p>Search by role, company, industry, or content engagement. Our AI finds the exact people who need your solution — not just random profiles.</p>
-          <div class="feature-tag">🔥 Most Popular</div>
+          <div class="feature-tag">&#128293; Most Popular</div>
         </div>
 
         <div class="feature-card">
@@ -135,7 +241,7 @@
           <div class="feature-icon" style="background: linear-gradient(135deg, #10b981, #06b6d4);">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
-          <h3>Auto-Connect</h3>
+          <h3>Auto-Connect with Personalized Notes</h3>
           <p>Send personalized connection requests with one click. Built-in safety limits protect your LinkedIn account.</p>
         </div>
 
@@ -151,7 +257,7 @@
           <div class="feature-icon" style="background: linear-gradient(135deg, #3b82f6, #6366f1);">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
           </div>
-          <h3>Campaign Management</h3>
+          <h3>Campaign Management Dashboard</h3>
           <p>Organize leads into campaigns. Track connection status, pitch history, and response rates — all in one dashboard.</p>
         </div>
 
@@ -159,7 +265,7 @@
           <div class="feature-icon" style="background: linear-gradient(135deg, #06b6d4, #3b82f6);">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <h3>Cloud Backup</h3>
+          <h3>Cloud Backup &amp; Sync</h3>
           <p>Your leads are automatically backed up to the cloud. Never lose a single contact, even if you switch devices.</p>
         </div>
       </div>
@@ -171,14 +277,14 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">How It Works</span>
-        <h2 class="section-title">From Zero to Pipeline<br><span class="gradient-text">In 3 Steps</span></h2>
+        <h2 class="section-title">From Zero to Pipeline<br><span class="gradient-text">In 3 Simple Steps</span></h2>
       </div>
 
       <div class="steps">
         <div class="step">
           <div class="step-number">01</div>
           <div class="step-content">
-            <h3>Install & Connect</h3>
+            <h3>Install &amp; Connect</h3>
             <p>Add Agentcsx to Chrome, connect your LinkedIn account with one click. Setup takes under 30 seconds.</p>
           </div>
         </div>
@@ -194,7 +300,7 @@
         <div class="step">
           <div class="step-number">03</div>
           <div class="step-content">
-            <h3>Connect & Close</h3>
+            <h3>Connect &amp; Close</h3>
             <p>Send smart connection requests, auto-pitch when accepted, and track your entire pipeline — all from one dashboard.</p>
           </div>
         </div>
@@ -202,67 +308,38 @@
     </div>
   </section>
 
-  <!-- ═══════════ PRICING ═══════════ -->
-  <section class="pricing" id="pricing">
+  <!-- ═══════════ FAQ ═══════════ -->
+  <section class="faq-section" id="faq">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Pricing</span>
-        <h2 class="section-title">Simple, Transparent <br><span class="gradient-text">Pricing</span></h2>
-        <p class="section-subtitle">No hidden fees. No per-credit charges. No surprises.</p>
+        <span class="section-tag">FAQ</span>
+        <h2 class="section-title">Frequently Asked<br><span class="gradient-text">Questions</span></h2>
       </div>
-
-      <div class="pricing-grid">
-        <!-- Free Plan -->
-        <div class="pricing-card">
-          <div class="pricing-card-header">
-            <h3 class="pricing-plan-name">Free</h3>
-            <p class="pricing-plan-desc">Get started with AI lead generation</p>
-          </div>
-          <div class="pricing-price">
-            <span class="pricing-amount">$0</span>
-            <span class="pricing-period">/ forever</span>
-          </div>
-          <ul class="pricing-features">
-            <li><span class="check">✓</span> 50 leads per month</li>
-            <li><span class="check">✓</span> AI lead scoring</li>
-            <li><span class="check">✓</span> 5 connections per day</li>
-            <li><span class="check">✓</span> 5 AI pitches per day</li>
-            <li><span class="check">✓</span> Basic lead search</li>
-            <li class="muted"><span class="x">✕</span> Cloud sync & backup</li>
-            <li class="muted"><span class="x">✕</span> Batch connect</li>
-            <li class="muted"><span class="x">✕</span> AI connection notes</li>
-          </ul>
-          <a href="https://chromewebstore.google.com/search/agentcsx" target="_blank" class="btn btn-outline btn-pricing">Get Started Free</a>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3 class="faq-question">Is Agentcsx free to use?</h3>
+          <p class="faq-answer">Yes, Agentcsx is 100% free to use. Install the Chrome extension and start finding leads immediately with no credit card required.</p>
         </div>
-
-        <!-- Pro Plan -->
-        <div class="pricing-card pricing-card-pro">
-          <div class="pricing-badge">Most Popular</div>
-          <div class="pricing-card-header">
-            <h3 class="pricing-plan-name">Pro</h3>
-            <p class="pricing-plan-desc">Everything unlimited. Close more deals.</p>
-          </div>
-          <div class="pricing-price">
-            <span class="pricing-amount">$29</span>
-            <span class="pricing-period">/ month</span>
-          </div>
-          <ul class="pricing-features">
-            <li><span class="check">✓</span> <strong>Unlimited</strong> leads</li>
-            <li><span class="check">✓</span> AI lead scoring</li>
-            <li><span class="check">✓</span> <strong>20</strong> connections per day</li>
-            <li><span class="check">✓</span> <strong>Unlimited</strong> AI pitches</li>
-            <li><span class="check">✓</span> Advanced lead search</li>
-            <li><span class="check">✓</span> Cloud sync & backup</li>
-            <li><span class="check">✓</span> Batch connect</li>
-            <li><span class="check">✓</span> AI connection notes</li>
-          </ul>
-          <a href="https://chromewebstore.google.com/search/agentcsx" target="_blank" class="btn btn-primary btn-pricing">Start Pro — $29/mo</a>
+        <div class="faq-item">
+          <h3 class="faq-question">Is it safe for my LinkedIn account?</h3>
+          <p class="faq-answer">Yes. Agentcsx has built-in daily safety limits that protect your LinkedIn account from being flagged. It mimics natural human behavior and respects LinkedIn's rate limits.</p>
         </div>
-      </div>
-
-      <!-- Competitor comparison -->
-      <div class="pricing-compare">
-        <p>💡 <strong>3x cheaper</strong> than Lemlist ($99/mo), <strong>5x cheaper</strong> than Expandi ($99/mo), and <strong>no hidden credit fees</strong>.</p>
+        <div class="faq-item">
+          <h3 class="faq-question">How does Agentcsx find leads?</h3>
+          <p class="faq-answer">Agentcsx uses AI to search LinkedIn by role, company, industry, location, or content engagement. It scores each lead 0-100 based on relevance and fit, so you can focus on the hottest prospects first.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Does it work with browsers other than Chrome?</h3>
+          <p class="faq-answer">Yes. Agentcsx works with all Chromium-based browsers including Google Chrome, Microsoft Edge, Brave, and Opera.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Can it send connection requests automatically?</h3>
+          <p class="faq-answer">Yes. Agentcsx can send personalized connection requests with AI-generated notes tailored to each lead's profile, company, and role. Built-in daily limits keep your account safe.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Do I need LinkedIn Premium or Sales Navigator?</h3>
+          <p class="faq-answer">No. Agentcsx works with any LinkedIn account — free or premium. No Sales Navigator required.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -276,11 +353,11 @@
     <div class="container cta-content">
       <h2 class="cta-title">Ready to Find Your Next<br><span class="gradient-text">100 Clients?</span></h2>
       <p class="cta-subtitle">Join thousands of professionals using Agentcsx to build their pipeline on autopilot.</p>
-      <a href="https://chromewebstore.google.com/search/agentcsx" target="_blank" class="btn btn-primary btn-xl" id="install-btn">
+      <a href="https://chromewebstore.google.com/search/agentcsx" target="_blank" rel="noopener" class="btn btn-primary btn-xl" id="install-btn">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.21 0 4.831 1.757 2.632 4.501l3.953 6.848A5.454 5.454 0 0 1 12 6.545h10.691A12 12 0 0 0 12 0zM1.931 5.47A11.943 11.943 0 0 0 0 12c0 6.012 4.42 10.991 10.189 11.864l3.953-6.847a5.45 5.45 0 0 1-6.865-2.29zm13.342 2.166a5.446 5.446 0 0 1 1.45 7.09l.002.001-3.953 6.848c.404.037.813.057 1.228.057 6.627 0 12-5.373 12-12 0-1.006-.128-1.983-.364-2.916H15.46z"/><circle cx="12" cy="12" r="3.882"/></svg>
         Add to Chrome — It's Free
       </a>
-      <p class="cta-note">Works with Chrome, Edge, Brave & all Chromium browsers</p>
+      <p class="cta-note">Works with Chrome, Edge, Brave &amp; all Chromium browsers</p>
     </div>
   </section>
 
@@ -289,7 +366,7 @@
     <div class="container footer-content">
       <div class="footer-brand">
         <div class="footer-logo">
-          <img src="assets/icon48.png" alt="Agentcsx" class="footer-logo-img">
+          <img src="assets/icon48.png" alt="Agentcsx logo" class="footer-logo-img">
           <span>agent<span class="gradient-text">csx</span></span>
         </div>
         <p>AI-powered client finding agent for LinkedIn. Built for sales professionals who want results, not busywork.</p>
@@ -299,12 +376,16 @@
           <h4>Product</h4>
           <a href="#features">Features</a>
           <a href="#how-it-works">How It Works</a>
+          <a href="#faq">FAQ</a>
+          <a href="blog/">Blog</a>
           <a href="#install">Install</a>
         </div>
         <div class="footer-col">
           <h4>Legal</h4>
+          <!-- SEO #7: Fixed broken footer links -->
           <a href="privacy.html">Privacy Policy</a>
-          <a href="support.html">Terms of Service</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="support.html">Support</a>
         </div>
       </div>
     </div>
@@ -342,7 +423,7 @@
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-    document.querySelectorAll('.feature-card, .step, .stat').forEach(el => {
+    document.querySelectorAll('.feature-card, .step, .stat, .faq-item').forEach(el => {
       el.classList.add('animate-in');
       observer.observe(el);
     });
