@@ -620,6 +620,119 @@ body {
   line-height: 1.7;
 }
 
+/* ═══════════ PRICING ═══════════ */
+
+.pricing-section {
+  padding: 120px 0;
+  background: linear-gradient(180deg, var(--bg-dark), #0a0d1a, var(--bg-dark));
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.pricing-card-featured {
+  border-color: rgba(99,102,241,0.4);
+  background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(6,182,212,0.05));
+  box-shadow: 0 0 60px rgba(99,102,241,0.1);
+}
+
+.pricing-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 16px;
+  background: var(--gradient-main);
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+  white-space: nowrap;
+}
+
+.pricing-plan {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.pricing-price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.price-amount {
+  font-size: 48px;
+  font-weight: 900;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+
+.price-period {
+  font-size: 16px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.pricing-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.pricing-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+  flex: 1;
+}
+
+.pricing-features li {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.pricing-features li strong {
+  color: var(--text-primary);
+}
+
+.pricing-btn {
+  width: 100%;
+  justify-content: center;
+}
+
 /* ═══════════ CTA SECTION ═══════════ */
 
 .cta-section {
@@ -836,5 +949,9 @@ body {
 
   .proof-divider {
     display: none;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
   }
 }
