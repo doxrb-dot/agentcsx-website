@@ -145,9 +145,23 @@
     padding:7px 14px;border-radius:999px;border:1px solid var(--border);background:var(--card);
     opacity:0;transform:translateY(10px);animation:rise .7s var(--ease) .2s forwards}
   .pill .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:blip 2s infinite}
-  h1.hero-title{font-size:clamp(34px,6vw,66px);line-height:1.04;font-weight:850;letter-spacing:-.03em;margin:18px auto 0;max-width:14ch}
-  h1.hero-title span{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
-    background-size:200% auto;animation:shimmer 5s linear infinite}
+  h1.hero-title{font-size:clamp(28px,5.2vw,60px);line-height:1.06;font-weight:850;letter-spacing:-.03em;margin:18px auto 0;
+    max-width:none;white-space:nowrap}
+  /* rotating verb — finds / connects / pitches / posts, one at a time */
+  .hero-title .rotator{position:relative;display:inline-block;text-align:center;vertical-align:baseline}
+  .hero-title .rot-sizer{visibility:hidden}
+  .hero-title .rot-w{position:absolute;left:0;right:0;text-align:center;white-space:nowrap;opacity:0;
+    background:var(--grad);background-size:200% auto;-webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;color:transparent;
+    animation:rotWord 8s var(--ease) infinite, shimmer 5s linear infinite}
+  @keyframes rotWord{
+    0%{opacity:0;transform:translateY(16px);filter:blur(5px)}
+    3%{opacity:1;transform:translateY(0);filter:blur(0)}
+    22%{opacity:1;transform:translateY(0);filter:blur(0)}
+    25%{opacity:0;transform:translateY(-16px);filter:blur(5px)}
+    100%{opacity:0;transform:translateY(-16px)}
+  }
+  @media(max-width:620px){ h1.hero-title{white-space:normal} }
   .hero-sub{color:var(--muted);font-size:clamp(15px,2vw,19px);max-width:60ch;margin:20px auto 0;
     opacity:0;animation:rise .7s var(--ease) .5s forwards}
   .hero-cta{display:flex;gap:14px;justify-content:center;margin-top:30px;flex-wrap:wrap;
@@ -400,6 +414,9 @@
   @media(prefers-reduced-motion:reduce){
     *{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
     .reveal{opacity:1;transform:none}
+    /* no rotation: show the first verb statically */
+    .hero-title .rot-w{animation:none!important;opacity:0;transform:none;filter:none}
+    .hero-title .rot-w:nth-child(2){opacity:1}
   }
 </style>
 </head>
@@ -442,7 +459,13 @@
   <div class="wrap">
     <div class="hero-logo" id="heroLogo"></div>
     <div class="pill"><span class="dot"></span> Your autonomous LinkedIn sales agent</div>
-    <h1 class="hero-title">It finds, connects, pitches &amp; posts <span>while you sleep</span></h1>
+    <h1 class="hero-title">It&nbsp;<span class="rotator" aria-label="finds, connects, pitches, posts">
+      <span class="rot-sizer" aria-hidden="true">connects</span>
+      <span class="rot-w" style="animation-delay:0s">finds</span>
+      <span class="rot-w" style="animation-delay:2s">connects</span>
+      <span class="rot-w" style="animation-delay:4s">pitches</span>
+      <span class="rot-w" style="animation-delay:6s">posts</span>
+    </span>&nbsp;while you sleep</h1>
     <p class="hero-sub">agentcsx runs the entire outbound pipeline on autopilot — discovering high-value leads, sending warm connections, pitching the ones who accept, and posting content that pulls inbound. Watch the full loop below.</p>
     <div class="hero-cta">
       <a class="btn btn-primary" href="https://chromewebstore.google.com/search/agentcsx" target="_blank" rel="noopener">
