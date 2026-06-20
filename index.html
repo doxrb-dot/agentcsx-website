@@ -95,12 +95,13 @@
   }
 
   *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;overflow-x:clip}
   body{
     font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
     background:var(--bg);
     color:var(--text);
-    overflow-x:hidden;
+    overflow-x:clip;
+    width:100%;
     line-height:1.5;
     -webkit-font-smoothing:antialiased;
   }
@@ -135,8 +136,16 @@
   .nav-links a:hover{color:var(--text)}
   .badge-exp{font-size:11px;font-weight:700;padding:5px 10px;border-radius:999px;border:1px solid rgba(245,158,11,.4);
     color:#fbbf24;background:rgba(245,158,11,.08)}
-  .btn-nav{font-size:13.5px;padding:9px 17px;border-radius:11px}
+  .btn-nav{font-size:13.5px;padding:9px 17px;border-radius:11px;white-space:nowrap}
+  .btn-nav .cta-short{display:none}
   @media(max-width:760px){.nav-links{display:none}}
+  @media(max-width:520px){
+    .btn-nav .cta-full{display:none}
+    .btn-nav .cta-short{display:inline}
+    .btn-nav{font-size:13px;padding:9px 14px}
+    .brand{font-size:16px;gap:8px}
+    .brand .mark{width:30px;height:30px}
+  }
 
   /* ---------- hero ---------- */
   .hero{position:relative;text-align:center;padding:90px 0 60px}
@@ -149,10 +158,16 @@
     max-width:none;white-space:nowrap}
   /* rotating verb — find / connect / pitch / post, typed one at a time. */
   .hero-title .rotator{display:inline-block;position:relative;vertical-align:baseline;text-align:left;white-space:nowrap}
-  .hero-title .rot-w{display:inline-block;white-space:nowrap;
-    background:var(--grad);background-size:200% auto;-webkit-background-clip:text;background-clip:text;
-    -webkit-text-fill-color:transparent;color:transparent;
-    animation:shimmer 5s linear infinite}
+  /* Gradient verb. NOTE: no animation on this element — animating a
+     -webkit-background-clip:text node makes iOS/WebKit (Safari, Brave on
+     iPhone) paint the whole gradient box instead of clipping to glyphs.
+     Keep it static; the caret carries the motion. Solid-color fallback
+     where background-clip:text isn't supported. */
+  .hero-title .rot-w{display:inline-block;white-space:nowrap;color:#3b82f6}
+  @supports ((-webkit-background-clip:text) or (background-clip:text)){
+    .hero-title .rot-w{background:var(--grad);-webkit-background-clip:text;background-clip:text;
+      -webkit-text-fill-color:transparent;color:transparent}
+  }
   .hero-title .rot-caret{display:inline-block;width:3px;height:.86em;margin-left:.05em;border-radius:2px;
     background:#3b82f6;vertical-align:-.06em;animation:caretBlink 1.05s steps(1) infinite}
   @keyframes caretBlink{0%,49%{opacity:1}50%,100%{opacity:0}}
@@ -186,6 +201,10 @@
   .sec-head h2{font-size:clamp(26px,4vw,42px);font-weight:820;letter-spacing:-.02em;margin:16px 0 12px}
   .sec-head p{color:var(--muted);font-size:16px}
   .stage-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:38px}
+  /* min-width:0 lets grid items shrink below their content's intrinsic
+     width — without it the .viz card (aspect-ratio + min-height ≈ 402px)
+     forces the column wider than a phone viewport. */
+  .stage-grid > *{min-width:0}
   @media(max-width:880px){.stage-grid{grid-template-columns:1fr;gap:28px}}
   .reverse .stage-grid{direction:rtl}
   .reverse .stage-grid > *{direction:ltr}
@@ -195,7 +214,7 @@
   .reveal.in{opacity:1;transform:none}
 
   /* visual stage card */
-  .viz{position:relative;border-radius:22px;border:1px solid var(--border);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));
+  .viz{position:relative;width:100%;max-width:100%;border-radius:22px;border:1px solid var(--border);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));
     box-shadow:0 40px 110px rgba(0,0,0,.5);overflow:hidden;aspect-ratio:1/.82;min-height:330px}
   .viz::before{content:"";position:absolute;inset:0;background:radial-gradient(420px 280px at 70% 0%,rgba(99,102,241,.16),transparent 60%);pointer-events:none}
   .viz-top{position:absolute;top:0;left:0;right:0;height:38px;display:flex;align-items:center;gap:7px;padding:0 14px;
@@ -444,7 +463,7 @@
     <div class="nav-links">
       <a href="#find">Find</a><a href="#connect">Connect</a><a href="#pitch">Pitch</a><a href="#post">Post</a>
     </div>
-    <a class="btn btn-primary btn-nav" href="https://chromewebstore.google.com/search/agentcsx" target="_blank" rel="noopener">Add to your browser — Free</a>
+    <a class="btn btn-primary btn-nav" href="https://chromewebstore.google.com/search/agentcsx" target="_blank" rel="noopener"><span class="cta-full">Add to your browser — Free</span><span class="cta-short">Get it free</span></a>
   </div>
 </nav>
 
