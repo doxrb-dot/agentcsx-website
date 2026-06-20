@@ -206,6 +206,16 @@
      forces the column wider than a phone viewport. */
   .stage-grid > *{min-width:0}
   @media(max-width:880px){.stage-grid{grid-template-columns:1fr;gap:28px}}
+  /* On phones the aspect-ratio card is too short for the tallest content
+     (the chat stage's header + 4 message rows + composer), so messages
+     overflow above the header. Give content-heavy stages explicit room. */
+  @media(max-width:600px){
+    #pitch .viz{min-height:510px}
+    #post .viz{min-height:430px}
+    /* tighten the chat a touch so it fits without a tall empty gap */
+    #pitch .li-msgs{gap:11px;padding:14px}
+    #pitch .li-msgs .chat-row{max-width:92%}
+  }
   .reverse .stage-grid{direction:rtl}
   .reverse .stage-grid > *{direction:ltr}
 
