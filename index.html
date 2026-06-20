@@ -147,20 +147,16 @@
   .pill .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:blip 2s infinite}
   h1.hero-title{font-size:clamp(28px,5.2vw,60px);line-height:1.06;font-weight:850;letter-spacing:-.03em;margin:18px auto 0;
     max-width:none;white-space:nowrap}
-  /* rotating verb — finds / connects / pitches / posts, one at a time */
-  .hero-title .rotator{position:relative;display:inline-block;text-align:center;vertical-align:baseline}
-  .hero-title .rot-sizer{visibility:hidden}
-  .hero-title .rot-w{position:absolute;left:0;right:0;text-align:center;white-space:nowrap;opacity:0;
+  /* rotating verb — find / connect / pitch / post, one at a time.
+     Width fits the active word (JS) so the trailing text keeps clean spacing. */
+  .hero-title .rotator{display:inline-block;position:relative;vertical-align:baseline;text-align:left;
+    width:auto;transition:width .42s var(--ease);will-change:width}
+  .hero-title .rot-w{display:inline-block;white-space:nowrap;
     background:var(--grad);background-size:200% auto;-webkit-background-clip:text;background-clip:text;
     -webkit-text-fill-color:transparent;color:transparent;
-    animation:rotWord 8s var(--ease) infinite, shimmer 5s linear infinite}
-  @keyframes rotWord{
-    0%{opacity:0;transform:translateY(16px);filter:blur(5px)}
-    3%{opacity:1;transform:translateY(0);filter:blur(0)}
-    22%{opacity:1;transform:translateY(0);filter:blur(0)}
-    25%{opacity:0;transform:translateY(-16px);filter:blur(5px)}
-    100%{opacity:0;transform:translateY(-16px)}
-  }
+    animation:shimmer 5s linear infinite;
+    transition:opacity .34s var(--ease),transform .34s var(--ease),filter .34s var(--ease);will-change:opacity,transform}
+  .hero-title .rot-w.out{opacity:0;transform:translateY(-15px);filter:blur(5px)}
   @media(max-width:620px){ h1.hero-title{white-space:normal} }
   .hero-sub{color:var(--muted);font-size:clamp(15px,2vw,19px);max-width:60ch;margin:20px auto 0;
     opacity:0;animation:rise .7s var(--ease) .5s forwards}
@@ -414,9 +410,8 @@
   @media(prefers-reduced-motion:reduce){
     *{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
     .reveal{opacity:1;transform:none}
-    /* no rotation: show the first verb statically */
-    .hero-title .rot-w{animation:none!important;opacity:0;transform:none;filter:none}
-    .hero-title .rot-w:nth-child(2){opacity:1}
+    /* no rotation: show the verb statically */
+    .hero-title .rot-w{animation:none!important;opacity:1!important;transform:none!important;filter:none!important}
   }
 </style>
 </head>
@@ -459,13 +454,7 @@
   <div class="wrap">
     <div class="hero-logo" id="heroLogo"></div>
     <div class="pill"><span class="dot"></span> Your autonomous LinkedIn sales agent</div>
-    <h1 class="hero-title">It&nbsp;<span class="rotator" aria-label="finds, connects, pitches, posts">
-      <span class="rot-sizer" aria-hidden="true">connects</span>
-      <span class="rot-w" style="animation-delay:0s">finds</span>
-      <span class="rot-w" style="animation-delay:2s">connects</span>
-      <span class="rot-w" style="animation-delay:4s">pitches</span>
-      <span class="rot-w" style="animation-delay:6s">posts</span>
-    </span>&nbsp;while you sleep</h1>
+    <h1 class="hero-title"><span class="rotator" id="rotator" aria-label="find, connect, pitch, post"><span class="rot-w" id="rotWord">find</span></span>&nbsp;while you sleep</h1>
     <p class="hero-sub">agentcsx runs the entire outbound pipeline on autopilot — discovering high-value leads, sending warm connections, pitching the ones who accept, and posting content that pulls inbound. Watch the full loop below.</p>
     <div class="hero-cta">
       <a class="btn btn-primary" href="https://chromewebstore.google.com/search/agentcsx" target="_blank" rel="noopener">
@@ -760,6 +749,34 @@ function logoMark(size, hero, suffix){
   </div>`;
 }
 document.getElementById('heroLogo').innerHTML = logoMark(182, true,  'h');
+
+/* rotating verb — find / connect / pitch / post, one at a time.
+   The rotator width transitions to each active word so the trailing
+   "while you sleep" keeps a clean single-space gap. */
+(function(){
+  const rotator = document.getElementById('rotator');
+  const word = document.getElementById('rotWord');
+  if(!rotator || !word) return;
+  const words = ['find','connect','pitch','post'];
+  let i = 0;
+  // measure a word's rendered width using a hidden clone
+  const ghost = document.createElement('span');
+  ghost.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;pointer-events:none';
+  ghost.className = 'rot-w';
+  function measure(w){ ghost.textContent = w; rotator.appendChild(ghost); const px = ghost.offsetWidth; rotator.removeChild(ghost); return px; }
+  // lock initial width
+  rotator.style.width = measure(words[0]) + 'px';
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  setInterval(function(){
+    word.classList.add('out');
+    setTimeout(function(){
+      i = (i + 1) % words.length;
+      word.textContent = words[i];
+      rotator.style.width = measure(words[i]) + 'px';
+      word.classList.remove('out');
+    }, 340);
+  }, 2200);
+})();
 document.getElementById('navMark').innerHTML  = logoMark(34,  false, 'n');
 const connectHub = document.getElementById('connectHub');
 if(connectHub) connectHub.innerHTML = logoMark(78, false, 'c');
