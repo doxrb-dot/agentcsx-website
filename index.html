@@ -147,16 +147,15 @@
   .pill .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:blip 2s infinite}
   h1.hero-title{font-size:clamp(28px,5.2vw,60px);line-height:1.06;font-weight:850;letter-spacing:-.03em;margin:18px auto 0;
     max-width:none;white-space:nowrap}
-  /* rotating verb — find / connect / pitch / post, one at a time.
-     Width fits the active word (JS) so the trailing text keeps clean spacing. */
-  .hero-title .rotator{display:inline-block;position:relative;vertical-align:baseline;text-align:left;
-    width:auto;transition:width .42s var(--ease);will-change:width}
+  /* rotating verb — find / connect / pitch / post, typed one at a time. */
+  .hero-title .rotator{display:inline-block;position:relative;vertical-align:baseline;text-align:left;white-space:nowrap}
   .hero-title .rot-w{display:inline-block;white-space:nowrap;
     background:var(--grad);background-size:200% auto;-webkit-background-clip:text;background-clip:text;
     -webkit-text-fill-color:transparent;color:transparent;
-    animation:shimmer 5s linear infinite;
-    transition:opacity .34s var(--ease),transform .34s var(--ease),filter .34s var(--ease);will-change:opacity,transform}
-  .hero-title .rot-w.out{opacity:0;transform:translateY(-15px);filter:blur(5px)}
+    animation:shimmer 5s linear infinite}
+  .hero-title .rot-caret{display:inline-block;width:3px;height:.86em;margin-left:.05em;border-radius:2px;
+    background:#3b82f6;vertical-align:-.06em;animation:caretBlink 1.05s steps(1) infinite}
+  @keyframes caretBlink{0%,49%{opacity:1}50%,100%{opacity:0}}
   @media(max-width:620px){ h1.hero-title{white-space:normal} }
   .hero-sub{color:var(--muted);font-size:clamp(15px,2vw,19px);max-width:60ch;margin:20px auto 0;
     opacity:0;animation:rise .7s var(--ease) .5s forwards}
@@ -454,7 +453,7 @@
   <div class="wrap">
     <div class="hero-logo" id="heroLogo"></div>
     <div class="pill"><span class="dot"></span> Your autonomous LinkedIn sales agent</div>
-    <h1 class="hero-title"><span class="rotator" id="rotator" aria-label="find, connect, pitch, post"><span class="rot-w" id="rotWord">find</span></span>&nbsp;while you sleep</h1>
+    <h1 class="hero-title"><span class="rotator" id="rotator" aria-label="find, connect, pitch, post"><span class="rot-w" id="rotWord">find</span><span class="rot-caret" aria-hidden="true"></span></span>&nbsp;while you sleep</h1>
     <p class="hero-sub">agentcsx runs the entire outbound pipeline on autopilot — discovering high-value leads, sending warm connections, pitching the ones who accept, and posting content that pulls inbound. Watch the full loop below.</p>
     <div class="hero-cta">
       <a class="btn btn-primary" href="https://chromewebstore.google.com/search/agentcsx" target="_blank" rel="noopener">
@@ -750,32 +749,41 @@ function logoMark(size, hero, suffix){
 }
 document.getElementById('heroLogo').innerHTML = logoMark(182, true,  'h');
 
-/* rotating verb — find / connect / pitch / post, one at a time.
-   The rotator width transitions to each active word so the trailing
-   "while you sleep" keeps a clean single-space gap. */
+/* rotating verb — find / connect / pitch / post, typed one at a time
+   like a typewriter (type out, hold, backspace, next word). */
 (function(){
-  const rotator = document.getElementById('rotator');
   const word = document.getElementById('rotWord');
-  if(!rotator || !word) return;
+  if(!word) return;
   const words = ['find','connect','pitch','post'];
-  let i = 0;
-  // measure a word's rendered width using a hidden clone
-  const ghost = document.createElement('span');
-  ghost.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;pointer-events:none';
-  ghost.className = 'rot-w';
-  function measure(w){ ghost.textContent = w; rotator.appendChild(ghost); const px = ghost.offsetWidth; rotator.removeChild(ghost); return px; }
-  // lock initial width
-  rotator.style.width = measure(words[0]) + 'px';
-  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
-  setInterval(function(){
-    word.classList.add('out');
-    setTimeout(function(){
-      i = (i + 1) % words.length;
-      word.textContent = words[i];
-      rotator.style.width = measure(words[i]) + 'px';
-      word.classList.remove('out');
-    }, 340);
-  }, 2200);
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches){
+    word.textContent = words[0];
+    return;
+  }
+  const TYPE = 95;    // ms per character typed
+  const ERASE = 55;   // ms per character erased
+  const HOLD = 1400;  // ms to hold the full word
+  const GAP = 320;    // ms blank before next word
+  let wi = 0;
+  function type(){
+    const target = words[wi];
+    let c = 0;
+    (function step(){
+      word.textContent = target.slice(0, ++c);
+      if(c < target.length) setTimeout(step, TYPE);
+      else setTimeout(erase, HOLD);
+    })();
+  }
+  function erase(){
+    const target = words[wi];
+    let c = target.length;
+    (function step(){
+      word.textContent = target.slice(0, --c);
+      if(c > 0) setTimeout(step, ERASE);
+      else { wi = (wi + 1) % words.length; setTimeout(type, GAP); }
+    })();
+  }
+  word.textContent = '';
+  setTimeout(type, 400);
 })();
 document.getElementById('navMark').innerHTML  = logoMark(34,  false, 'n');
 const connectHub = document.getElementById('connectHub');
