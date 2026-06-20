@@ -1,496 +1,926 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- SEO #9: Improved title + description -->
+<title>Agentcsx — AI-Powered LinkedIn Lead Generation & Client Finding Agent</title>
+<meta name="description" content="Agentcsx is a free AI-powered Chrome extension that discovers, scores, and connects with high-value LinkedIn leads automatically. The ultimate lead generation tool for sales professionals, founders, and agencies.">
+<meta name="keywords" content="LinkedIn automation, lead generation, AI sales agent, client finder, Chrome extension, LinkedIn leads, sales automation, warm outreach, B2B lead generation">
 
-  <!-- SEO #9: Improved title + description -->
-  <title>Agentcsx — AI-Powered LinkedIn Lead Generation & Client Finding Agent</title>
-  <meta name="description" content="Agentcsx is a free AI-powered Chrome extension that discovers, scores, and connects with high-value LinkedIn leads automatically. The ultimate lead generation tool for sales professionals, founders, and agencies.">
-  <meta name="keywords" content="LinkedIn automation, lead generation, AI sales agent, client finder, Chrome extension, LinkedIn leads, sales automation, warm outreach, B2B lead generation">
+<!-- SEO #3: Canonical URL -->
+<link rel="canonical" href="https://agentcsx.com/">
 
-  <!-- SEO #3: Canonical URL -->
-  <link rel="canonical" href="https://agentcsx.com/">
+<!-- SEO #5: Open Graph -->
+<meta property="og:title" content="Agentcsx — AI-Powered LinkedIn Lead Generation Agent">
+<meta property="og:description" content="Find your ideal clients on LinkedIn with AI-powered automation. Discover, score, and connect with high-value leads while you sleep.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://agentcsx.com/">
+<meta property="og:image" content="https://agentcsx.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Agentcsx">
 
-  <!-- SEO #5: Open Graph -->
-  <meta property="og:title" content="Agentcsx — AI-Powered LinkedIn Lead Generation Agent">
-  <meta property="og:description" content="Find your ideal clients on LinkedIn with AI-powered automation. Discover, score, and connect with high-value leads while you sleep.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://agentcsx.com/">
-  <meta property="og:image" content="https://agentcsx.com/assets/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:site_name" content="Agentcsx">
+<!-- SEO #6: Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Agentcsx — AI Client Finding Agent for LinkedIn">
+<meta name="twitter:description" content="Discover, score, and connect with high-value LinkedIn leads automatically. Free Chrome extension.">
+<meta name="twitter:image" content="https://agentcsx.com/assets/og-image.png">
 
-  <!-- SEO #6: Twitter Cards -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Agentcsx — AI Client Finding Agent for LinkedIn">
-  <meta name="twitter:description" content="Discover, score, and connect with high-value LinkedIn leads automatically. Free Chrome extension.">
-  <meta name="twitter:image" content="https://agentcsx.com/assets/og-image.png">
+<!-- SEO #14: Google Search Console -->
+<meta name="google-site-verification" content="m5QCsAfvMyW1fgQ8NEgHWKSG3iyHbztQYticRdYwpuo">
 
-  <!-- SEO #14: Google Search Console (replace YOUR_TOKEN) -->
-  <meta name="google-site-verification" content="m5QCsAfvMyW1fgQ8NEgHWKSG3iyHbztQYticRdYwpuo">
+<!-- SEO #4: Structured Data — SoftwareApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Agentcsx",
+  "description": "AI-powered Chrome extension that discovers, scores, and connects with high-value LinkedIn leads automatically.",
+  "url": "https://agentcsx.com",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Chrome, Edge, Brave",
+  "offers": [
+    { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD" },
+    { "@type": "Offer", "name": "Pro", "price": "19", "priceCurrency": "USD", "billingIncrement": "P1M" }
+  ],
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "50", "bestRating": "5" },
+  "author": { "@type": "Organization", "name": "Agentcsx" }
+}
+</script>
 
-  <!-- SEO #4: Structured Data — SoftwareApplication -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Agentcsx",
-    "description": "AI-powered Chrome extension that discovers, scores, and connects with high-value LinkedIn leads automatically.",
-    "url": "https://agentcsx.com",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Chrome, Edge, Brave",
-    "offers": [
-      {
-        "@type": "Offer",
-        "name": "Free",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      {
-        "@type": "Offer",
-        "name": "Pro",
-        "price": "19",
-        "priceCurrency": "USD",
-        "billingIncrement": "P1M"
-      }
-    ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5",
-      "reviewCount": "50",
-      "bestRating": "5"
-    },
-    "author": {
-      "@type": "Organization",
-      "name": "Agentcsx"
-    }
+<!-- SEO #8: FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Is Agentcsx free to use?", "acceptedAnswer": { "@type": "Answer", "text": "Agentcsx offers a generous free plan to get started. For unlimited leads, campaigns, and advanced AI features, upgrade to Pro for just $19/month." } },
+    { "@type": "Question", "name": "Is Agentcsx safe for my LinkedIn account?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Agentcsx has built-in daily safety limits that protect your LinkedIn account from being flagged. It mimics natural human behavior and respects LinkedIn's rate limits." } },
+    { "@type": "Question", "name": "How does Agentcsx find leads?", "acceptedAnswer": { "@type": "Answer", "text": "Agentcsx uses AI to search LinkedIn by role, company, industry, location, or content engagement. It scores each lead 0-100 based on relevance and fit, so you can focus on the hottest prospects first." } },
+    { "@type": "Question", "name": "Does Agentcsx work with browsers other than Chrome?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Agentcsx works with all Chromium-based browsers including Google Chrome, Microsoft Edge, Brave, and Opera." } },
+    { "@type": "Question", "name": "Can Agentcsx send connection requests automatically?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Agentcsx can send personalized connection requests with AI-generated notes tailored to each lead's profile, company, and role. Built-in daily limits keep your account safe." } }
+  ]
+}
+</script>
+
+<link rel="icon" type="image/png" href="assets/icon48.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     agentcsx — EXPERIMENTAL landing page
+     Pure CSS / SVG / JS animations. Zero images, zero libraries.
+     ============================================================ */
+
+  :root{
+    --bg:#07080f;
+    --bg2:#0d0f1a;
+    --card:rgba(255,255,255,0.03);
+    --border:rgba(255,255,255,0.08);
+    --text:#f1f3f9;
+    --muted:#aab4c5;
+    --dim:#7c8aa0;
+    --ind:#6366f1;
+    --blue:#3b82f6;
+    --cyan:#06b6d4;
+    --purple:#8b5cf6;
+    --green:#22c55e;
+    --amber:#f59e0b;
+    --rose:#f43f5e;
+    --grad:linear-gradient(135deg,#6366f1,#3b82f6,#06b6d4);
+    --grad-soft:linear-gradient(135deg,rgba(99,102,241,.18),rgba(6,182,212,.06));
+    --ease:cubic-bezier(.22,.61,.36,1);
   }
-  </script>
 
-  <!-- SEO #8: FAQ Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Is Agentcsx free to use?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Agentcsx offers a generous free plan to get started. For unlimited leads, campaigns, and advanced AI features, upgrade to Pro for just $19/month."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is Agentcsx safe for my LinkedIn account?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Agentcsx has built-in daily safety limits that protect your LinkedIn account from being flagged. It mimics natural human behavior and respects LinkedIn's rate limits."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How does Agentcsx find leads?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Agentcsx uses AI to search LinkedIn by role, company, industry, location, or content engagement. It scores each lead 0-100 based on relevance and fit, so you can focus on the hottest prospects first."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does Agentcsx work with browsers other than Chrome?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Agentcsx works with all Chromium-based browsers including Google Chrome, Microsoft Edge, Brave, and Opera."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can Agentcsx send connection requests automatically?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Agentcsx can send personalized connection requests with AI-generated notes tailored to each lead's profile, company, and role. Built-in daily limits keep your account safe."
-        }
-      }
-    ]
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
   }
-  </script>
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
 
-  <link rel="icon" type="image/png" href="assets/icon48.png">
-  <!-- SEO #13: Preload hero image -->
-  <link rel="preload" as="image" href="assets/screenshot-dashboard.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  /* ---------- animated background ---------- */
+  .bg-fx{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+  .orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.42}
+  .orb.a{width:620px;height:620px;background:var(--ind);top:-220px;left:-120px;animation:float 22s var(--ease) infinite}
+  .orb.b{width:520px;height:520px;background:var(--cyan);top:10%;right:-180px;animation:float 26s var(--ease) infinite reverse}
+  .orb.c{width:480px;height:480px;background:var(--purple);bottom:-160px;left:32%;animation:float 24s var(--ease) infinite 3s}
+  .grid{position:absolute;inset:0;
+    background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+                     linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+    background-size:80px 80px;
+    mask-image:radial-gradient(ellipse at center,#000 25%,transparent 72%);
+    -webkit-mask-image:radial-gradient(ellipse at center,#000 25%,transparent 72%);
+  }
+  @keyframes float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(34px,-30px) scale(1.06)}66%{transform:translate(-22px,22px) scale(.95)}}
+
+  /* ---------- nav ---------- */
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);
+    background:rgba(7,8,15,.55);border-bottom:1px solid var(--border)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:18px}
+  .brand .mark{width:34px;height:34px}
+  .brand b{color:var(--text)}
+  .brand .csx{background:linear-gradient(135deg,#3b82f6,#06b6d4);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  .nav-links{display:flex;gap:28px;font-size:14px;color:var(--muted)}
+  .nav-links a{transition:color .2s}
+  .nav-links a:hover{color:var(--text)}
+  .badge-exp{font-size:11px;font-weight:700;padding:5px 10px;border-radius:999px;border:1px solid rgba(245,158,11,.4);
+    color:#fbbf24;background:rgba(245,158,11,.08)}
+  .btn-nav{font-size:13.5px;padding:9px 17px;border-radius:11px}
+  @media(max-width:760px){.nav-links{display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;text-align:center;padding:90px 0 60px}
+  .hero-logo{width:182px;height:182px;margin:0 auto 44px;line-height:0;filter:drop-shadow(0 8px 22px rgba(59,130,246,.22))}
+  .pill{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;color:var(--muted);
+    padding:7px 14px;border-radius:999px;border:1px solid var(--border);background:var(--card);
+    opacity:0;transform:translateY(10px);animation:rise .7s var(--ease) .2s forwards}
+  .pill .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:blip 2s infinite}
+  h1.hero-title{font-size:clamp(34px,6vw,66px);line-height:1.04;font-weight:850;letter-spacing:-.03em;margin:18px auto 0;max-width:14ch}
+  h1.hero-title span{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+    background-size:200% auto;animation:shimmer 5s linear infinite}
+  .hero-sub{color:var(--muted);font-size:clamp(15px,2vw,19px);max-width:60ch;margin:20px auto 0;
+    opacity:0;animation:rise .7s var(--ease) .5s forwards}
+  .hero-cta{display:flex;gap:14px;justify-content:center;margin-top:30px;flex-wrap:wrap;
+    opacity:0;animation:rise .7s var(--ease) .7s forwards}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:15px;padding:13px 24px;border-radius:13px;
+    cursor:pointer;border:1px solid transparent;transition:transform .2s var(--ease),box-shadow .2s,filter .2s}
+  .btn-primary{background:var(--grad);color:#fff;box-shadow:0 8px 28px rgba(99,102,241,.4)}
+  .btn-primary:hover{transform:translateY(-2px);filter:brightness(1.08);box-shadow:0 12px 36px rgba(99,102,241,.55)}
+  .btn-ghost{background:var(--card);border-color:var(--border);color:var(--text)}
+  .btn-ghost:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.2)}
+  .scroll-hint{margin-top:54px;display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--dim);font-size:12px;
+    opacity:0;animation:rise .7s var(--ease) 1s forwards}
+  .mouse{width:24px;height:38px;border:2px solid var(--dim);border-radius:14px;position:relative}
+  .mouse::after{content:"";position:absolute;left:50%;top:7px;width:4px;height:7px;border-radius:2px;background:var(--cyan);
+    transform:translateX(-50%);animation:wheel 1.6s infinite}
+  @keyframes wheel{0%{opacity:0;transform:translate(-50%,0)}30%{opacity:1}100%{opacity:0;transform:translate(-50%,12px)}}
+  @keyframes rise{to{opacity:1;transform:translateY(0)}}
+  @keyframes shimmer{to{background-position:200% center}}
+  @keyframes blip{0%,100%{opacity:1}50%{opacity:.3}}
+
+  /* ---------- section / pipeline scaffolding ---------- */
+  .section{position:relative;padding:70px 0}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan)}
+  .eyebrow .num{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;
+    font-size:12px;background:var(--grad-soft);border:1px solid var(--border);color:var(--text)}
+  .sec-head{max-width:60ch}
+  .sec-head h2{font-size:clamp(26px,4vw,42px);font-weight:820;letter-spacing:-.02em;margin:16px 0 12px}
+  .sec-head p{color:var(--muted);font-size:16px}
+  .stage-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:38px}
+  @media(max-width:880px){.stage-grid{grid-template-columns:1fr;gap:28px}}
+  .reverse .stage-grid{direction:rtl}
+  .reverse .stage-grid > *{direction:ltr}
+
+  /* reveal on scroll */
+  .reveal{opacity:0;transform:translateY(34px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* visual stage card */
+  .viz{position:relative;border-radius:22px;border:1px solid var(--border);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));
+    box-shadow:0 40px 110px rgba(0,0,0,.5);overflow:hidden;aspect-ratio:1/.82;min-height:330px}
+  .viz::before{content:"";position:absolute;inset:0;background:radial-gradient(420px 280px at 70% 0%,rgba(99,102,241,.16),transparent 60%);pointer-events:none}
+  .viz-top{position:absolute;top:0;left:0;right:0;height:38px;display:flex;align-items:center;gap:7px;padding:0 14px;
+    border-bottom:1px solid var(--border);background:rgba(7,8,15,.4)}
+  .viz-top i{width:10px;height:10px;border-radius:50%;display:block}
+  .viz-top .r{background:#ff5f57}.viz-top .y{background:#febc2e}.viz-top .g{background:#28c840}
+  .viz-top span{margin-left:8px;font-size:11px;color:var(--dim);font-weight:600;letter-spacing:.02em;display:inline-flex;align-items:center;gap:6px}
+  .viz-top .li-logo{width:15px;height:15px;border-radius:4px;background:#0a66c2;display:inline-grid;place-items:center}
+  .viz-top .li-logo svg{width:10px;height:10px;fill:#fff}
+  .viz-body{position:absolute;inset:38px 0 0 0}
+
+  /* feature bullets */
+  .feat{list-style:none;margin-top:22px;display:flex;flex-direction:column;gap:14px}
+  .feat li{display:flex;gap:12px;align-items:flex-start;color:var(--muted);font-size:15px}
+  .feat svg{width:22px;height:22px;flex:none;margin-top:1px}
+  .feat b{color:var(--text);font-weight:650}
+
+  /* connector between stages */
+  .connector{display:flex;justify-content:center;height:80px}
+  .connector svg{height:100%}
+  .flow-path{stroke:url(#flowGrad);stroke-width:2.5;fill:none;stroke-dasharray:7 9;animation:flow 1.1s linear infinite}
+  @keyframes flow{to{stroke-dashoffset:-32}}
+
+  /* ===================== STAGE 1 — FIND LEADS (radar) ===================== */
+  .radar{position:absolute;inset:0;display:grid;place-items:center}
+  .radar-ring{position:absolute;border:1px solid rgba(99,102,241,.18);border-radius:50%}
+  .rr1{width:78%;height:92%}.rr2{width:55%;height:65%}.rr3{width:30%;height:36%}
+  .sweep{position:absolute;width:78%;height:92%;border-radius:50%;
+    background:conic-gradient(from 0deg,rgba(6,182,212,0) 0deg,rgba(6,182,212,0) 300deg,rgba(6,182,212,.0) 300deg,rgba(6,182,212,.35) 360deg);
+    -webkit-mask:radial-gradient(circle,transparent 0,#000 0);}
+  .stage.in .sweep{animation:spin 3.4s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .node{position:absolute;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:800;color:#fff;
+    background:linear-gradient(135deg,#1e293b,#0f172a);border:1px solid rgba(255,255,255,.1);opacity:0;transform:scale(.4)}
+  .node img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;
+    -webkit-user-drag:none;user-select:none}
+  /* LinkedIn platform badge on each scanned profile */
+  .node .li{position:absolute;bottom:-4px;right:-4px;width:17px;height:17px;border-radius:5px;background:#0a66c2;
+    display:grid;place-items:center;border:1.5px solid #0a1424;box-shadow:0 1px 4px rgba(0,0,0,.45)}
+  .node .li svg{width:11px;height:11px;fill:#fff}
+  .stage.in .node{animation:pop .5s var(--ease) forwards}
+  .node.match{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(6,182,212,.16),0 0 22px rgba(6,182,212,.5)}
+  .node.match img{box-shadow:inset 0 0 0 2px var(--cyan)}
+  .node .score{position:absolute;top:-9px;right:-12px;font-size:9px;font-weight:800;color:#031018;background:var(--cyan);
+    padding:1px 5px;border-radius:6px;opacity:0}
+  .stage.in .node.match .score{animation:rise .4s var(--ease) 1.4s forwards}
+  .node .ring{position:absolute;inset:-5px;border-radius:50%;border:2px solid var(--cyan);opacity:0;
+    transform:scale(.6)}
+  .stage.in .node.match .ring{animation:ping 2.4s ease-out 1.2s infinite}
+  @keyframes ping{0%{opacity:.8;transform:scale(.6)}70%,100%{opacity:0;transform:scale(1.5)}}
+  @keyframes pop{to{opacity:1;transform:scale(1)}}
+  .scan-label{position:absolute;bottom:14px;left:14px;font-size:11px;font-weight:700;color:var(--cyan);
+    display:flex;align-items:center;gap:8px}
+  .scan-label .pulse{width:8px;height:8px;border-radius:50%;background:var(--cyan);animation:blip 1.2s infinite}
+
+  /* ===================== STAGE 2 — AUTO CONNECT ===================== */
+  .net{position:absolute;inset:0}
+  .hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:18px;
+    background:var(--grad);display:grid;place-items:center;box-shadow:0 0 40px rgba(99,102,241,.6);z-index:3}
+  .hub svg{width:30px;height:30px}
+  /* hub hosting the animated brand logo (replaces the bolt icon) */
+  .hub.logo{width:78px;height:78px;border-radius:0;background:none;box-shadow:none;
+    filter:drop-shadow(0 0 18px rgba(59,130,246,.5))}
+  .person{position:absolute;width:50px;display:flex;flex-direction:column;align-items:center;gap:5px;opacity:0;transform:scale(.5)}
+  .stage.in .person{animation:pop .5s var(--ease) forwards}
+  .avatar{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;font-size:13px;
+    border:2px solid rgba(255,255,255,.12);position:relative}
+  .avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;-webkit-user-drag:none}
+  /* LinkedIn platform badge on each connected profile (bottom-left, clear of the check) */
+  .avatar .li{position:absolute;left:-5px;bottom:-5px;width:17px;height:17px;border-radius:5px;background:#0a66c2;
+    display:grid;place-items:center;border:1.5px solid #0a1424;box-shadow:0 1px 4px rgba(0,0,0,.45);z-index:2}
+  .avatar .li svg{width:11px;height:11px;fill:#fff}
+  .avatar .check{position:absolute;right:-6px;bottom:-6px;width:18px;height:18px;border-radius:50%;background:var(--green);
+    display:grid;place-items:center;opacity:0;transform:scale(0);z-index:3}
+  .stage.in .person.done .avatar .check{animation:pop .4s var(--ease) forwards}
+  .ptag{font-size:9px;font-weight:700;padding:1px 6px;border-radius:5px;background:rgba(255,255,255,.06);color:var(--muted)}
+  .stage.in .person.done .ptag{background:rgba(34,197,94,.16);color:#86efac}
+  .link-line{stroke-width:2;fill:none;stroke-dasharray:1;stroke-dashoffset:1;pathLength:1}
+  .stage.in .link-line{animation:draw 1s var(--ease) forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  .req-dot{r:4;fill:var(--cyan);opacity:0}
+  .stage.in .req-dot{animation:travel 1.6s var(--ease) infinite}
+
+  /* ===================== STAGE 3 — AUTO PITCH (LinkedIn messaging) ===================== */
+  .chat{position:absolute;inset:0;display:flex;flex-direction:column}
+  /* LinkedIn conversation header */
+  .li-head{flex:none;display:flex;align-items:center;gap:11px;padding:11px 16px;border-bottom:1px solid var(--border);
+    background:rgba(255,255,255,.025)}
+  .li-head .li-av{width:38px;height:38px;border-radius:50%;flex:none;overflow:hidden;position:relative;
+    display:grid;place-items:center;font-size:12px;font-weight:800;color:#fff;background:#1e293b}
+  .li-head .li-av img{width:100%;height:100%;object-fit:cover;display:block}
+  .li-head .li-av .on{position:absolute;right:0;bottom:0;width:10px;height:10px;border-radius:50%;background:#22c55e;border:2px solid #0c1018}
+  .li-head .nm{font-size:13.5px;font-weight:700;color:var(--text);line-height:1.25}
+  .li-head .nm small{display:block;font-size:10.5px;color:var(--dim);font-weight:500;margin-top:1px}
+  .li-head .in{margin-left:auto;width:24px;height:24px;border-radius:6px;background:#0a66c2;display:grid;place-items:center;flex:none}
+  .li-head .in svg{width:15px;height:15px;fill:#fff}
+  /* message list */
+  .li-msgs{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:flex-end;gap:13px;padding:16px}
+  .chat-row{display:flex;gap:9px;max-width:86%;opacity:0;transform:translateY(14px)}
+  .chat-row.in{animation:rise .5s var(--ease) forwards}
+  .chat-row.them{align-self:flex-start}
+  .chat-row.me{align-self:flex-end;flex-direction:row-reverse}
+  .c-av{width:32px;height:32px;border-radius:50%;flex:none;overflow:hidden;position:relative;
+    display:grid;place-items:center;font-size:11px;font-weight:800;color:#fff;background:#1e293b}
+  .c-av img{width:100%;height:100%;object-fit:cover;display:block;border-radius:50%}
+  .c-col{display:flex;flex-direction:column;gap:4px;min-width:0}
+  .me .c-col{align-items:flex-end}
+  .c-name{font-size:10.5px;font-weight:700;color:var(--text);padding:0 2px}
+  .c-name i{font-style:normal;font-weight:500;color:var(--dim)}
+  .bubble{padding:10px 13px;font-size:13px;line-height:1.45}
+  .them .bubble{background:rgba(255,255,255,.06);border:1px solid var(--border);color:var(--text);
+    border-radius:3px 13px 13px 13px}
+  .me .bubble{background:#0a66c2;color:#fff;border:none;border-radius:13px 3px 13px 13px}
+  .typing{display:inline-flex;gap:4px;align-items:center}
+  .typing i{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:typing 1.2s infinite}
+  .typing i:nth-child(2){animation-delay:.18s}.typing i:nth-child(3){animation-delay:.36s}
+  @keyframes typing{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-5px);opacity:1}}
+  /* LinkedIn-style composer */
+  .li-input{flex:none;display:flex;align-items:center;gap:10px;padding:10px 14px;border-top:1px solid var(--border);
+    background:rgba(255,255,255,.025)}
+  .li-input .ai-chip{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:800;color:#fff;
+    padding:5px 10px;border-radius:999px;background:var(--grad-soft);border:1px solid var(--border);white-space:nowrap}
+  .li-input .ai-chip svg{width:12px;height:12px;animation:spin 4s linear infinite}
+  .li-input .ph{flex:1;color:var(--dim);font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .li-input .send{background:#0a66c2;color:#fff;border:none;border-radius:999px;padding:7px 18px;font-size:12px;font-weight:700;flex:none}
+
+  /* ===================== STAGE 4 — AUTO POST (LinkedIn feed) ===================== */
+  .post{position:absolute;inset:0;padding:16px;display:flex;flex-direction:column;gap:12px}
+  .avatar-photo{overflow:hidden;position:relative}
+  .avatar-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:50%}
+  .composer{border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.03);padding:12px}
+  .composer .who{display:flex;align-items:center;gap:9px;margin-bottom:8px}
+  .composer .who .av{width:34px;height:34px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-weight:800;font-size:12px;flex:none}
+  .composer .who div small{display:block;color:var(--dim);font-size:10px}
+  .composer .who .li-post{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;color:var(--dim);
+    padding:4px 9px;border-radius:999px;border:1px solid var(--border);background:rgba(10,102,194,.08);white-space:nowrap}
+  .composer .who .li-post .lk{width:16px;height:16px;border-radius:4px;background:#0a66c2;display:grid;place-items:center;flex:none}
+  .composer .who .li-post .lk svg{width:11px;height:11px;fill:#fff}
+  .typed{font-size:13px;color:var(--text);min-height:54px;line-height:1.5}
+  .typed .cursor{display:inline-block;width:2px;height:15px;background:var(--cyan);vertical-align:-2px;margin-left:1px;animation:caret 1s steps(1) infinite}
+  @keyframes caret{50%{opacity:0}}
+  .hashtag{color:#71b7ff;font-weight:600}
+  .post-card{border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.03);padding:14px;
+    opacity:0;transform:translateY(16px) scale(.98)}
+  .post-card.in{animation:rise .6s var(--ease) forwards}
+  .post-card .meta{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+  .post-card .meta .av{width:42px;height:42px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-weight:800;font-size:13px;flex:none}
+  .post-card .meta b{font-size:13.5px;display:flex;align-items:center;gap:5px}
+  .post-card .meta .deg{color:var(--dim);font-weight:500;font-size:11px}
+  .post-card .meta small{color:var(--dim);font-size:11px;display:block;margin-top:1px}
+  .post-card .meta small svg{width:11px;height:11px;vertical-align:-1px;fill:var(--dim)}
+  .post-card .meta .in{margin-left:auto;width:22px;height:22px;border-radius:5px;background:#0a66c2;display:grid;place-items:center;flex:none;align-self:flex-start}
+  .post-card .meta .in svg{width:14px;height:14px;fill:#fff}
+  .post-card .txt{font-size:13px;color:var(--text);line-height:1.5}
+  /* social proof counts */
+  .lcounts{display:flex;align-items:center;justify-content:space-between;margin-top:12px;font-size:11.5px;color:var(--dim)}
+  .lcounts .rx{display:flex;align-items:center;gap:7px}
+  .lcounts .emo{display:inline-flex}
+  .lcounts .emo span{width:18px;height:18px;border-radius:50%;display:grid;place-items:center;font-size:10px;margin-left:-5px;
+    border:1.5px solid #0c1018;background:#1e293b}
+  .lcounts .emo span:first-child{margin-left:0}
+  .lcounts b{color:var(--text)}
+  /* action bar */
+  .lacts{display:flex;gap:2px;margin-top:8px;padding-top:6px;border-top:1px solid var(--border)}
+  .lact{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;padding:9px 4px;border-radius:8px;
+    font-size:12.5px;font-weight:600;color:var(--muted)}
+  .lact svg{width:18px;height:18px}
+  .lact.like{color:#71b7ff}
+  .react{position:absolute;font-size:18px;opacity:0}
+  .post.in .react{animation:floatup 2.6s ease-out forwards}
+  @keyframes floatup{0%{opacity:0;transform:translateY(10px) scale(.6)}20%{opacity:1}100%{opacity:0;transform:translateY(-60px) scale(1.1)}}
+
+  /* ---------- recap pipeline strip ---------- */
+  .recap{padding:80px 0 30px;text-align:center}
+  .pipe{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:42px;position:relative}
+  @media(max-width:760px){.pipe{grid-template-columns:1fr;gap:14px}}
+  .pstep{position:relative;padding:24px 16px;border:1px solid var(--border);border-radius:16px;margin:0 6px;background:var(--card);
+    opacity:0;transform:translateY(20px)}
+  .pstep.in{animation:rise .6s var(--ease) forwards}
+  .pstep .ic{width:46px;height:46px;border-radius:13px;background:var(--grad-soft);border:1px solid var(--border);
+    display:grid;place-items:center;margin:0 auto 12px}
+  .pstep .ic svg{width:22px;height:22px}
+  .pstep h4{font-size:15px;margin-bottom:5px}
+  .pstep p{font-size:12.5px;color:var(--dim);line-height:1.45}
+  .pstep .arrow{position:absolute;right:-14px;top:50%;transform:translateY(-50%);color:var(--cyan);z-index:2}
+  @media(max-width:760px){.pstep .arrow{display:none}}
+
+  /* ---------- footer (ported from live agentcsx.com) ---------- */
+  .container{max-width:1200px;margin:0 auto;padding:0 24px}
+  .gradient-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  .footer{border-top:1px solid var(--border);padding:64px 0 0;margin-top:40px}
+  .footer-content{display:flex;justify-content:space-between;gap:64px;margin-bottom:48px}
+  .footer-brand{max-width:320px}
+  .footer-logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;margin-bottom:16px}
+  .footer-logo-img{width:28px;height:28px;border-radius:6px}
+  .footer-brand p{font-size:14px;color:#64748b;line-height:1.7}
+  .footer-links{display:flex;gap:80px}
+  .footer-col{display:flex;flex-direction:column;gap:12px}
+  .footer-col h4{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#94a3b8;margin-bottom:4px}
+  .footer-col a{color:#64748b;text-decoration:none;font-size:14px;transition:color .2s}
+  .footer-col a:hover{color:#f1f3f9}
+  .footer-bottom{border-top:1px solid var(--border);padding:20px 0}
+  .footer-bottom p{font-size:13px;color:#64748b;text-align:center}
+  @media(max-width:768px){
+    .footer-content{flex-direction:column;gap:40px}
+    .footer-links{gap:40px}
+  }
+
+  .gradtext{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
 </head>
 <body>
-  <!-- ═══════════ NAVBAR ═══════════ -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="/" class="nav-logo">
-        <img src="assets/icon48.png" alt="Agentcsx logo" class="nav-logo-img">
-        <span class="nav-logo-text">agent<span class="gradient-text">csx</span></span>
+
+<!-- animated background -->
+<div class="bg-fx" aria-hidden="true">
+  <div class="orb a"></div><div class="orb b"></div><div class="orb c"></div>
+  <div class="grid"></div>
+</div>
+
+<!-- reusable SVG defs / brand gradient -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6366f1"/><stop offset=".5" stop-color="#3b82f6"/><stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="flowGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6366f1"/><stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<!-- ============ NAV ============ -->
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand">
+      <span class="mark" id="navMark"></span>
+      <span><b>agent</b><span class="csx">csx</span></span>
+    </div>
+    <div class="nav-links">
+      <a href="#find">Find</a><a href="#connect">Connect</a><a href="#pitch">Pitch</a><a href="#post">Post</a>
+    </div>
+    <a class="btn btn-primary btn-nav" href="https://chromewebstore.google.com/search/agentcsx" target="_blank" rel="noopener">Add to Chrome — Free</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-logo" id="heroLogo"></div>
+    <div class="pill"><span class="dot"></span> Your autonomous LinkedIn sales agent</div>
+    <h1 class="hero-title">It finds, connects, pitches &amp; posts <span>while you sleep</span></h1>
+    <p class="hero-sub">agentcsx runs the entire outbound pipeline on autopilot — discovering high-value leads, sending warm connections, pitching the ones who accept, and posting content that pulls inbound. Watch the full loop below.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#find">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        See how it works
       </a>
-      <div class="nav-links">
+      <a class="btn btn-ghost" href="#post">Skip to results</a>
+    </div>
+    <div class="scroll-hint"><div class="mouse"></div>Scroll to watch the pipeline</div>
+  </div>
+</header>
+
+<!-- ============ STAGE 1 — FIND ============ -->
+<section class="section stage" id="find">
+  <div class="wrap stage-grid">
+    <div class="reveal">
+      <div class="eyebrow"><span class="num">01</span> Discover</div>
+      <div class="sec-head">
+        <h2>AI <span class="gradtext">finds the right leads</span> on LinkedIn</h2>
+        <p>Describe your ideal customer once. agentcsx scans LinkedIn, scores every profile against your ICP in real time, and surfaces only the high-intent matches.</p>
+      </div>
+      <ul class="feat">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="url(#brand)" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><span><b>Semantic ICP matching</b> — understands role, seniority, industry &amp; signals, not just keywords.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="url(#brand)" stroke-width="2"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="4"/></svg><span><b>Live AI scoring</b> — each lead gets a 0–100 fit score with HOT / WARM tiers.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="url(#brand)" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span><b>Zero spreadsheets</b> — matches drop straight into your campaign.</span></li>
+      </ul>
+    </div>
+    <div class="reveal">
+      <div class="viz">
+        <div class="viz-top"><i class="r"></i><i class="y"></i><i class="g"></i><span>agentcsx · scanning <span class="li-logo"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></span> LinkedIn</span></div>
+        <div class="viz-body">
+          <div class="radar">
+            <div class="radar-ring rr1"></div><div class="radar-ring rr2"></div><div class="radar-ring rr3"></div>
+            <div class="sweep"></div>
+            <!-- nodes positioned with inline style; .match get score/ring -->
+            <!-- realistic LinkedIn profiles populated by JS (renderLeads) -->
+            <div class="node"        style="left:18%;top:24%;animation-delay:.1s" data-li="men/32"   data-fb="JK"></div>
+            <div class="node match"  style="left:64%;top:18%;animation-delay:.5s" data-li="women/65" data-fb="SM"><span class="ring"></span><span class="score">92</span></div>
+            <div class="node"        style="left:80%;top:54%;animation-delay:.3s" data-li="men/75"   data-fb="TR"></div>
+            <div class="node match"  style="left:30%;top:62%;animation-delay:.7s" data-li="women/68" data-fb="AL"><span class="ring"></span><span class="score">88</span></div>
+            <div class="node"        style="left:50%;top:80%;animation-delay:.4s" data-li="men/52"   data-fb="PM"></div>
+            <div class="node match"  style="left:70%;top:74%;animation-delay:.9s" data-li="women/90" data-fb="DV"><span class="ring"></span><span class="score">95</span></div>
+            <div class="node"        style="left:12%;top:46%;animation-delay:.6s" data-li="men/12"   data-fb="RB"></div>
+          </div>
+          <div class="scan-label"><span class="pulse"></span><span id="scanCount">scanning 1,245 profiles…</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="connector" aria-hidden="true">
+  <svg viewBox="0 0 20 80" preserveAspectRatio="none" width="20"><path class="flow-path" d="M10 0 V80"/></svg>
+</div>
+
+<!-- ============ STAGE 2 — CONNECT ============ -->
+<section class="section stage reverse" id="connect">
+  <div class="wrap stage-grid">
+    <div class="reveal">
+      <div class="eyebrow"><span class="num">02</span> Connect</div>
+      <div class="sec-head">
+        <h2>AI <span class="gradtext">auto-connects</span> with every match</h2>
+        <p>agentcsx sends personalized connection requests within your daily limits — warming up your network automatically and tracking who accepts.</p>
+      </div>
+      <ul class="feat">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="url(#brand)" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg><span><b>Human-paced sending</b> — respects LinkedIn limits to keep your account safe.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="url(#brand)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m22 4-10 10.01-3-3"/></svg><span><b>Acceptance tracking</b> — knows the moment a lead connects.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="url(#brand)" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><span><b>Personalized notes</b> — tailored to each profile, not copy-paste.</span></li>
+      </ul>
+    </div>
+    <div class="reveal">
+      <div class="viz">
+        <div class="viz-top"><i class="r"></i><i class="y"></i><i class="g"></i><span>agentcsx · sending connections</span></div>
+        <div class="viz-body">
+          <div class="net">
+            <!-- SVG link lines under the hub -->
+            <svg viewBox="0 0 400 300" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%">
+              <path class="link-line" stroke="url(#brand)" d="M200 150 L70 60"  style="animation-delay:.3s"/>
+              <path class="link-line" stroke="url(#brand)" d="M200 150 L330 70" style="animation-delay:.5s"/>
+              <path class="link-line" stroke="url(#brand)" d="M200 150 L60 220" style="animation-delay:.7s"/>
+              <path class="link-line" stroke="url(#brand)" d="M200 150 L340 230" style="animation-delay:.9s"/>
+              <path class="link-line" stroke="url(#brand)" d="M200 150 L200 40" style="animation-delay:.4s"/>
+              <circle class="req-dot" style="animation-delay:1s"><animateMotion dur="1.6s" repeatCount="indefinite" path="M200 150 L330 70"/></circle>
+              <circle class="req-dot" style="animation-delay:1.4s"><animateMotion dur="1.6s" repeatCount="indefinite" path="M200 150 L60 220"/></circle>
+            </svg>
+            <div class="hub logo" id="connectHub"></div>
+            <div class="person done" style="left:9%;top:8%;animation-delay:.4s"><div class="avatar" data-li="women/65" data-fb="SM"><span class="check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span></div><span class="ptag">Accepted</span></div>
+            <div class="person done" style="right:8%;top:10%;animation-delay:.7s"><div class="avatar" data-li="women/68" data-fb="AL"><span class="check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span></div><span class="ptag">Accepted</span></div>
+            <div class="person" style="left:7%;bottom:6%;animation-delay:.9s"><div class="avatar" data-li="women/90" data-fb="DV"></div><span class="ptag">Pending</span></div>
+            <div class="person done" style="right:7%;bottom:6%;animation-delay:1.1s"><div class="avatar" data-li="men/52" data-fb="PM"><span class="check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span></div><span class="ptag">Accepted</span></div>
+            <div class="person" style="left:50%;top:2%;transform:translateX(-50%);animation-delay:.6s"><div class="avatar" data-li="men/75" data-fb="TR"></div><span class="ptag">Pending</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="connector" aria-hidden="true">
+  <svg viewBox="0 0 20 80" preserveAspectRatio="none" width="20"><path class="flow-path" d="M10 0 V80"/></svg>
+</div>
+
+<!-- ============ STAGE 3 — PITCH ============ -->
+<section class="section stage" id="pitch">
+  <div class="wrap stage-grid">
+    <div class="reveal">
+      <div class="eyebrow"><span class="num">03</span> Pitch</div>
+      <div class="sec-head">
+        <h2>AI <span class="gradtext">auto-pitches</span> the ones who accept</h2>
+        <p>The moment a lead connects, agentcsx drafts and sends a context-aware pitch — referencing their role and your offer — then handles the back-and-forth.</p>
+      </div>
+      <ul class="feat">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="url(#brand)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span><b>Context-aware copy</b> — every message references the lead's actual profile.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="url(#brand)" stroke-width="2"><path d="m12 3 1.9 5.8H20l-4.9 3.6 1.9 5.8L12 14.6 7 18.2l1.9-5.8L4 8.8h6.1z"/></svg><span><b>Trained on what converts</b> — tone tuned to your best-performing outreach.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="url(#brand)" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span><b>You stay in control</b> — review &amp; approve, or let it run fully hands-off.</span></li>
+      </ul>
+    </div>
+    <div class="reveal">
+      <div class="viz">
+        <div class="viz-top"><i class="r"></i><i class="y"></i><i class="g"></i><span>agentcsx · messaging</span></div>
+        <div class="viz-body">
+          <div class="chat" id="chatBox">
+            <div class="li-head">
+              <div class="li-av" data-li="women/65" data-fb="SM"><span class="on"></span></div>
+              <div class="nm">Sarah Mitchell<small>Head of RevOps · Quantum Analytics · 2nd</small></div>
+              <span class="in"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></span>
+            </div>
+            <div class="li-msgs">
+              <div class="chat-row them" data-step="0"><div class="c-av" data-li="women/65" data-fb="SM"></div><div class="c-col"><span class="c-name">Sarah Mitchell <i>· 10:24 AM</i></span><div class="bubble">Thanks for connecting! 👋</div></div></div>
+              <div class="chat-row me" data-step="1"><div class="c-av" data-li="men/4" data-fb="CS"></div><div class="c-col"><span class="c-name">You <i>· 10:25 AM</i></span><div class="bubble">Hi Sarah — loved your post on scaling RevOps. We help teams like Quantum cut manual prospecting by ~10×. Worth a quick look?</div></div></div>
+              <div class="chat-row them" data-step="2"><div class="c-av" data-li="women/65" data-fb="SM"></div><div class="c-col"><div class="bubble typing" id="typing"><i></i><i></i><i></i></div></div></div>
+              <div class="chat-row them" data-step="3" id="reply"><div class="c-av" data-li="women/65" data-fb="SM"></div><div class="c-col"><span class="c-name">Sarah Mitchell <i>· 10:27 AM</i></span><div class="bubble">Actually yes — send me a time this week? 🙌</div></div></div>
+            </div>
+            <div class="li-input">
+              <span class="ai-chip"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="m12 3 1.9 5.8H20l-4.9 3.6 1.9 5.8L12 14.6 7 18.2l1.9-5.8L4 8.8h6.1z"/></svg> AI drafting</span>
+              <span class="ph">Write a message…</span>
+              <span class="send">Send</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="connector" aria-hidden="true">
+  <svg viewBox="0 0 20 80" preserveAspectRatio="none" width="20"><path class="flow-path" d="M10 0 V80"/></svg>
+</div>
+
+<!-- ============ STAGE 4 — POST ============ -->
+<section class="section stage reverse" id="post">
+  <div class="wrap stage-grid">
+    <div class="reveal">
+      <div class="eyebrow"><span class="num">04</span> Post</div>
+      <div class="sec-head">
+        <h2>AI <span class="gradtext">auto-posts</span> to pull inbound</h2>
+        <p>While outbound runs, agentcsx writes and publishes on-brand LinkedIn content on a schedule — keeping you top-of-feed and turning your profile into a lead magnet.</p>
+      </div>
+      <ul class="feat">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="url(#brand)" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><span><b>On-brand writing</b> — your voice, your topics, zero blank-page anxiety.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="url(#brand)" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><b>Smart scheduling</b> — posts when your audience is most active.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="url(#brand)" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v6h-6"/></svg><span><b>Compounding reach</b> — consistent posting feeds the discovery loop.</span></li>
+      </ul>
+    </div>
+    <div class="reveal">
+      <div class="viz">
+        <div class="viz-top"><i class="r"></i><i class="y"></i><i class="g"></i><span>agentcsx · publishing</span></div>
+        <div class="viz-body">
+          <div class="post" id="postBox">
+            <span class="react" style="left:30%;bottom:30%;animation-delay:.4s">👍</span>
+            <span class="react" style="left:55%;bottom:34%;animation-delay:1s">❤️</span>
+            <span class="react" style="left:70%;bottom:28%;animation-delay:1.6s">🔥</span>
+            <div class="composer">
+              <div class="who"><div class="av avatar-photo" data-li="men/4" data-fb="CS"></div><div><b style="font-size:12px">Drafting post…</b><small>agentcsx · AI writer</small></div>
+                <span class="li-post"><span class="lk"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></span> Posting to LinkedIn</span>
+              </div>
+              <div class="typed" id="typedText"><span class="cursor"></span></div>
+            </div>
+            <div class="post-card" id="postCard">
+              <div class="meta"><div class="av avatar-photo" data-li="men/4" data-fb="CS"></div>
+                <div><b>You <span class="deg">· 1st</span></b><small>Founder at agentcsx</small><small>just now · <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.9 6h-2.6a15.7 15.7 0 0 0-1.2-3.3A8 8 0 0 1 18.9 8ZM12 4c.8 1 1.4 2.4 1.8 4h-3.6c.4-1.6 1-3 1.8-4ZM4.3 14a7.8 7.8 0 0 1 0-4h3a17.6 17.6 0 0 0 0 4Zm.8 2h2.6c.3 1.2.7 2.3 1.2 3.3A8 8 0 0 1 5.1 16Zm2.6-8H5.1a8 8 0 0 1 3.8-3.3C8.4 5.7 8 6.8 7.7 8ZM12 20c-.8-1-1.4-2.4-1.8-4h3.6c-.4 1.6-1 3-1.8 4Zm2.2-6H9.8a15.4 15.4 0 0 1 0-4h4.4a15.4 15.4 0 0 1 0 4Zm.7 5.3c.5-1 .9-2.1 1.2-3.3h2.6a8 8 0 0 1-3.8 3.3ZM16.7 14a17.6 17.6 0 0 0 0-4h3a7.8 7.8 0 0 1 0 4Z"/></svg></small></div>
+                <span class="in"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></span>
+              </div>
+              <div class="txt">Most “lead gen” is just spray-and-pray. We rebuilt it as an agent that finds, connects, pitches &amp; posts on its own. <span class="hashtag">#agentcsx</span></div>
+              <div class="lcounts">
+                <span class="rx"><span class="emo"><span>👍</span><span>❤️</span><span>💡</span></span> <b data-count="438">0</b></span>
+                <span class="cr"><b data-count="76">0</b> comments · <b data-count="52">0</b> reposts</span>
+              </div>
+              <div class="lacts">
+                <span class="lact like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M7 10v11M2 13l1-3h6l-1-6 6 6h4a2 2 0 0 1 2 2l-2 7a2 2 0 0 1-2 2H7"/></svg> Like</span>
+                <span class="lact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Comment</span>
+                <span class="lact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg> Repost</span>
+                <span class="lact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg> Send</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RECAP PIPELINE ============ -->
+<section class="section recap">
+  <div class="wrap">
+    <div class="eyebrow" style="justify-content:center"><span class="num">∞</span> The full loop</div>
+    <div class="sec-head" style="margin:0 auto"><h2>One agent. <span class="gradtext">The entire pipeline.</span></h2>
+      <p style="margin:0 auto">Discovery feeds connections, connections feed pitches, posts feed discovery — a self-reinforcing loop that runs 24/7.</p></div>
+    <div class="pipe">
+      <div class="pstep" style="animation-delay:.05s">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="url(#brand)" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+        <h4>1 · Find</h4><p>Scans &amp; scores leads against your ICP.</p>
+        <span class="arrow"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+      <div class="pstep" style="animation-delay:.15s">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="url(#brand)" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg></div>
+        <h4>2 · Connect</h4><p>Sends warm, personalized requests.</p>
+        <span class="arrow"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+      <div class="pstep" style="animation-delay:.25s">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="url(#brand)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h4>3 · Pitch</h4><p>Drafts &amp; sends context-aware pitches.</p>
+        <span class="arrow"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+      <div class="pstep" style="animation-delay:.35s">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="url(#brand)" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
+        <h4>4 · Post</h4><p>Publishes content that pulls inbound.</p>
+      </div>
+    </div>
+    <div class="hero-cta" style="margin-top:46px;animation:none;opacity:1">
+      <a class="btn btn-primary" href="https://chromewebstore.google.com/search/agentcsx" target="_blank" rel="noopener"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg> Add to Chrome — Free</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER (kept from live agentcsx.com) ═══════════ -->
+<footer class="footer">
+  <div class="container footer-content">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="assets/icon48.png" alt="Agentcsx logo" class="footer-logo-img">
+        <span>agent<span class="gradient-text">csx</span></span>
+      </div>
+      <p>AI-powered client finding agent for LinkedIn. Built for sales professionals who want results, not busywork.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Product</h4>
         <a href="#features">Features</a>
         <a href="#how-it-works">How It Works</a>
         <a href="#faq">FAQ</a>
         <a href="blog/">Blog</a>
-        <a href="#pricing">Pricing</a>
+        <a href="#install">Install</a>
       </div>
-      <a href="https://chromewebstore.google.com/search/agentcsx" target="_blank" rel="noopener" class="btn btn-nav">Add to Chrome — Free</a>
-    </div>
-  </nav>
-
-  <!-- ═══════════ HERO ═══════════ -->
-  <section class="hero">
-    <div class="hero-bg">
-      <div class="hero-orb hero-orb-1"></div>
-      <div class="hero-orb hero-orb-2"></div>
-      <div class="hero-orb hero-orb-3"></div>
-      <div class="hero-grid"></div>
-    </div>
-    <div class="container hero-content">
-      <div class="hero-badge">
-        <span class="badge-dot"></span>
-        AI-Powered Lead Generation
-      </div>
-      <h1 class="hero-title">
-        Find Your Ideal Clients<br>
-        <span class="gradient-text">While You Sleep</span>
-      </h1>
-      <p class="hero-subtitle">
-        Agentcsx is your AI sales agent that discovers, scores, and connects with 
-        high-value leads on LinkedIn — automatically. Stop cold outreach. Start warm connections.
-      </p>
-      <div class="hero-cta">
-        <a href="https://chromewebstore.google.com/search/agentcsx" target="_blank" rel="noopener" class="btn btn-primary btn-lg" id="hero-cta">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
-          Add to Chrome — It's Free
-        </a>
-        <a href="#how-it-works" class="btn btn-ghost btn-lg">
-          See How It Works
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-number">10x</span>
-          <span class="stat-label">Faster Lead Discovery</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-number">500+</span>
-          <span class="stat-label">Leads Per Search</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-number">100%</span>
-          <span class="stat-label">Free to Use</span>
-        </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <!-- SEO #7: Fixed broken footer links -->
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="support.html">Support</a>
       </div>
     </div>
-    <div class="hero-screenshot">
-      <div class="screenshot-glow"></div>
-      <div class="screenshot-frame">
-        <!-- SEO #11: Keyword-rich alt text -->
-        <img src="assets/screenshot-dashboard.png" alt="Agentcsx AI lead generation dashboard showing scored LinkedIn leads with connection status and campaign management" class="screenshot-img" loading="lazy">
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════ SOCIAL PROOF BAR ═══════════ -->
-  <section class="social-proof">
+  </div>
+  <div class="footer-bottom">
     <div class="container">
-      <p class="proof-text">Trusted by sales professionals, founders, and agencies worldwide</p>
-      <div class="proof-logos">
-        <div class="proof-item">&#11088;&#11088;&#11088;&#11088;&#11088; <span>5.0 on Chrome Store</span></div>
-        <div class="proof-divider"></div>
-        <div class="proof-item">&#128274; <span>Privacy First</span></div>
-        <div class="proof-divider"></div>
-        <div class="proof-item">&#9889; <span>No LinkedIn Limits Violated</span></div>
-        <div class="proof-divider"></div>
-        <div class="proof-item">&#129504; <span>AI-Powered Scoring</span></div>
-      </div>
+      <p>&copy; 2026 Agentcsx. All rights reserved.</p>
     </div>
-  </section>
+  </div>
+</footer>
 
-  <!-- ═══════════ FEATURES ═══════════ -->
-  <section class="features" id="features">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Features</span>
-        <!-- SEO #10: H2 with keywords -->
-        <h2 class="section-title">AI-Powered LinkedIn Lead Generation<br><span class="gradient-text">Everything You Need to Close More Deals</span></h2>
-        <p class="section-subtitle">Agentcsx handles the entire top-of-funnel so you can focus on conversations that convert.</p>
-      </div>
+<script src="logo.js?v=3"></script>
+<script>
+/* ---------- animated logo ----------
+   EXACT brand mark — hand-authored SVG (window.AGENTCSX_LOGO) whose eyes blink
+   and glance left/right via built-in SMIL. Code adds a circular reveal-wipe that
+   "draws" it on, plus a gentle float and a subtle brand glow. */
+function uniqIds(svg, s){            // avoid duplicate ids when rendered twice
+  return svg
+    .replace(/id="([^"]+)"/g, (m,id)=>`id="${id}_${s}"`)
+    .replace(/url\(#([^)]+)\)/g, (m,id)=>`url(#${id}_${s})`)
+    .replace(/(xlink:href|href)="#([^"]+)"/g, (m,a,id)=>`${a}="#${id}_${s}"`);
+}
+function logoMark(size, hero, suffix){
+  const svg = uniqIds(window.AGENTCSX_LOGO || '', suffix);
+  return `
+  <div class="csx-logo${hero?' hero':''}" style="width:${size}px;height:${size}px">
+    ${hero?'<span class="lg-halo"></span>':''}
+    <span class="lg-svg-wrap">${svg}</span>
+  </div>`;
+}
+document.getElementById('heroLogo').innerHTML = logoMark(182, true,  'h');
+document.getElementById('navMark').innerHTML  = logoMark(34,  false, 'n');
+const connectHub = document.getElementById('connectHub');
+if(connectHub) connectHub.innerHTML = logoMark(78, false, 'c');
 
-      <div class="features-grid">
-        <div class="feature-card feature-card-lg">
-          <div class="feature-icon" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="m11 8v6M8 11h6"/></svg>
-          </div>
-          <h3>AI Lead Discovery</h3>
-          <p>Search by role, company, industry, or content engagement. Our AI finds the exact people who need your solution — not just random profiles.</p>
-          <div class="feature-tag">&#128293; Most Popular</div>
-        </div>
+/* logo animation styles (code-driven over the exact vector artwork) */
+const lgStyle = document.createElement('style');
+lgStyle.textContent = `
+  @property --reveal{syntax:'<angle>';initial-value:0deg;inherits:false}
+  /* block-level grid: no inline baseline gap (which let the art bleed onto the pill) */
+  .csx-logo{position:relative;display:block;isolation:isolate;line-height:0}
+  .csx-logo .lg-svg-wrap{position:absolute;inset:0;z-index:2;display:block;width:100%;height:100%}
+  .csx-logo .csx-svg{display:block;width:100%;height:100%}
+  /* reveal-wipe: sweep the artwork on, clockwise from top */
+  .csx-logo.hero .csx-svg{--reveal:0deg;
+    -webkit-mask:conic-gradient(from -90deg,#000 var(--reveal),transparent 0);
+            mask:conic-gradient(from -90deg,#000 var(--reveal),transparent 0);
+    animation:revealWipe 1.5s var(--ease) .2s forwards}
+  .csx-logo.hero{animation:lgFloat 6.5s ease-in-out 1.7s infinite}
+  /* subtle brand glow behind the mark */
+  .csx-logo .lg-halo{position:absolute;z-index:1;width:72%;height:72%;left:14%;top:14%;
+    border-radius:50%;pointer-events:none;
+    background:radial-gradient(circle,rgba(59,130,246,.30),rgba(34,211,238,.10) 55%,transparent 72%);
+    filter:blur(14px);opacity:.55;animation:haloPulse 5s ease-in-out infinite}
+  @keyframes revealWipe{to{--reveal:360deg}}
+  @keyframes lgFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  @keyframes blink{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(.08)}}
+  @keyframes haloPulse{0%,100%{opacity:.45}50%{opacity:.75}}
+`;
+document.head.appendChild(lgStyle);
 
-        <div class="feature-card">
-          <div class="feature-icon" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          </div>
-          <h3>Smart Lead Scoring</h3>
-          <p>Every lead gets an AI-powered score (0-100) based on relevance, engagement, and fit. Focus on hot leads first.</p>
-        </div>
+/* ---------- radar leads: realistic LinkedIn profile photos ---------- */
+(function renderLeads(){
+  const LI = '<svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>';
+  document.querySelectorAll('.radar .node[data-li], .net .avatar[data-li], .chat [data-li], .post [data-li]').forEach(node=>{
+    const src = 'https://randomuser.me/api/portraits/'+node.dataset.li+'.jpg';
+    const img = new Image();
+    img.alt = 'LinkedIn profile'; img.referrerPolicy = 'no-referrer';
+    img.onerror = ()=>{ img.remove(); node.prepend(document.createTextNode(node.dataset.fb||'')); };
+    img.src = src;
+    node.prepend(img);                       // photo sits under ring/score/badge
+    // chat & post avatars don't get the corner badge (their sections carry the LinkedIn logo)
+    if(!node.closest('.chat') && !node.closest('.post')){
+      const badge = document.createElement('span');
+      badge.className = 'li'; badge.innerHTML = LI;
+      node.appendChild(badge);
+    }
+  });
+})();
 
-        <div class="feature-card">
-          <div class="feature-icon" style="background: linear-gradient(135deg, #10b981, #06b6d4);">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <h3>Auto-Connect with Personalized Notes</h3>
-          <p>Send personalized connection requests with one click. Built-in safety limits protect your LinkedIn account.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon" style="background: linear-gradient(135deg, #ec4899, #8b5cf6);">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          </div>
-          <h3>AI Pitch Messages</h3>
-          <p>Generate personalized pitch messages based on each lead's profile, company, and role. No generic templates.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon" style="background: linear-gradient(135deg, #3b82f6, #6366f1);">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
-          </div>
-          <h3>Campaign Management Dashboard</h3>
-          <p>Organize leads into campaigns. Track connection status, pitch history, and response rates — all in one dashboard.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon" style="background: linear-gradient(135deg, #06b6d4, #3b82f6);">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h3>Cloud Backup &amp; Sync</h3>
-          <p>Your leads are automatically backed up to the cloud. Never lose a single contact, even if you switch devices.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════ HOW IT WORKS ═══════════ -->
-  <section class="how-it-works" id="how-it-works">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">How It Works</span>
-        <h2 class="section-title">From Zero to Pipeline<br><span class="gradient-text">In 3 Simple Steps</span></h2>
-      </div>
-
-      <div class="steps">
-        <div class="step">
-          <div class="step-number">01</div>
-          <div class="step-content">
-            <h3>Install &amp; Connect</h3>
-            <p>Add Agentcsx to Chrome, connect your LinkedIn account with one click. Setup takes under 30 seconds.</p>
-          </div>
-        </div>
-        <div class="step-connector"></div>
-        <div class="step">
-          <div class="step-number">02</div>
-          <div class="step-content">
-            <h3>Define Your Ideal Client</h3>
-            <p>Tell the AI who you're looking for — by title, industry, location, or even content topics. Watch it find hundreds of matches instantly.</p>
-          </div>
-        </div>
-        <div class="step-connector"></div>
-        <div class="step">
-          <div class="step-number">03</div>
-          <div class="step-content">
-            <h3>Connect &amp; Close</h3>
-            <p>Send smart connection requests, auto-pitch when accepted, and track your entire pipeline — all from one dashboard.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════ FAQ ═══════════ -->
-  <section class="faq-section" id="faq">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">FAQ</span>
-        <h2 class="section-title">Frequently Asked<br><span class="gradient-text">Questions</span></h2>
-      </div>
-      <div class="faq-grid">
-        <div class="faq-item">
-          <h3 class="faq-question">Is Agentcsx free to use?</h3>
-          <p class="faq-answer">Agentcsx offers a generous free plan to get started with AI lead scoring, 50 leads per search, and 5 daily connection requests. For unlimited leads, campaigns, and advanced AI features, upgrade to Pro for just $19/month.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Is it safe for my LinkedIn account?</h3>
-          <p class="faq-answer">Yes. Agentcsx has built-in daily safety limits that protect your LinkedIn account from being flagged. It mimics natural human behavior and respects LinkedIn's rate limits.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">How does Agentcsx find leads?</h3>
-          <p class="faq-answer">Agentcsx uses AI to search LinkedIn by role, company, industry, location, or content engagement. It scores each lead 0-100 based on relevance and fit, so you can focus on the hottest prospects first.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Does it work with browsers other than Chrome?</h3>
-          <p class="faq-answer">Yes. Agentcsx works with all Chromium-based browsers including Google Chrome, Microsoft Edge, Brave, and Opera.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Can it send connection requests automatically?</h3>
-          <p class="faq-answer">Yes. Agentcsx can send personalized connection requests with AI-generated notes tailored to each lead's profile, company, and role. Built-in daily limits keep your account safe.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Do I need LinkedIn Premium or Sales Navigator?</h3>
-          <p class="faq-answer">No. Agentcsx works with any LinkedIn account — free or premium. No Sales Navigator required.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════ PRICING ═══════════ -->
-  <section class="pricing-section" id="pricing">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Pricing</span>
-        <h2 class="section-title">Simple, Transparent<br><span class="gradient-text">Pricing</span></h2>
-        <p class="section-subtitle">Start free. Upgrade when you're ready to supercharge your pipeline.</p>
-      </div>
-
-      <div class="pricing-grid">
-        <!-- Free Plan -->
-        <div class="pricing-card">
-          <div class="pricing-plan">Free</div>
-          <div class="pricing-price">
-            <span class="price-amount">$0</span>
-            <span class="price-period">/forever</span>
-          </div>
-          <p class="pricing-desc">Perfect for getting started with LinkedIn lead generation.</p>
-          <ul class="pricing-features">
-            <li>&#9989; Up to 50 leads per search</li>
-            <li>&#9989; AI lead scoring</li>
-            <li>&#9989; 5 connection requests/day</li>
-            <li>&#9989; 1 active campaign</li>
-            <li>&#9989; Basic AI pitch messages</li>
-            <li>&#9989; Chrome, Edge, Brave support</li>
-          </ul>
-          <a href="https://chromewebstore.google.com/search/agentcsx" target="_blank" rel="noopener" class="btn btn-ghost btn-lg pricing-btn">Get Started Free</a>
-        </div>
-
-        <!-- Pro Plan -->
-        <div class="pricing-card pricing-card-featured">
-          <div class="pricing-badge">Most Popular</div>
-          <div class="pricing-plan">Pro</div>
-          <div class="pricing-price">
-            <span class="price-amount">$19</span>
-            <span class="price-period">/month</span>
-          </div>
-          <p class="pricing-desc">For serious sales professionals who want unlimited power.</p>
-          <ul class="pricing-features">
-            <li>&#9989; <strong>Unlimited</strong> leads per search</li>
-            <li>&#9989; AI lead scoring + priority ranking</li>
-            <li>&#9989; <strong>50</strong> connection requests/day</li>
-            <li>&#9989; <strong>Unlimited</strong> campaigns</li>
-            <li>&#9989; Advanced AI pitch messages</li>
-            <li>&#9989; AI-powered content posting</li>
-            <li>&#9989; Cloud backup &amp; sync</li>
-            <li>&#9989; Priority support</li>
-          </ul>
-          <a href="https://chromewebstore.google.com/search/agentcsx" target="_blank" rel="noopener" class="btn btn-primary btn-lg pricing-btn">Start Pro — $19/mo</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════ CTA / INSTALL ═══════════ -->
-  <section class="cta-section" id="install">
-    <div class="cta-bg">
-      <div class="cta-orb cta-orb-1"></div>
-      <div class="cta-orb cta-orb-2"></div>
-    </div>
-    <div class="container cta-content">
-      <h2 class="cta-title">Ready to Find Your Next<br><span class="gradient-text">100 Clients?</span></h2>
-      <p class="cta-subtitle">Join thousands of professionals using Agentcsx to build their pipeline on autopilot.</p>
-      <a href="https://chromewebstore.google.com/search/agentcsx" target="_blank" rel="noopener" class="btn btn-primary btn-xl" id="install-btn">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.21 0 4.831 1.757 2.632 4.501l3.953 6.848A5.454 5.454 0 0 1 12 6.545h10.691A12 12 0 0 0 12 0zM1.931 5.47A11.943 11.943 0 0 0 0 12c0 6.012 4.42 10.991 10.189 11.864l3.953-6.847a5.45 5.45 0 0 1-6.865-2.29zm13.342 2.166a5.446 5.446 0 0 1 1.45 7.09l.002.001-3.953 6.848c.404.037.813.057 1.228.057 6.627 0 12-5.373 12-12 0-1.006-.128-1.983-.364-2.916H15.46z"/><circle cx="12" cy="12" r="3.882"/></svg>
-        Add to Chrome — It's Free
-      </a>
-      <p class="cta-note">Works with Chrome, Edge, Brave &amp; all Chromium browsers</p>
-    </div>
-  </section>
-
-  <!-- ═══════════ FOOTER ═══════════ -->
-  <footer class="footer">
-    <div class="container footer-content">
-      <div class="footer-brand">
-        <div class="footer-logo">
-          <img src="assets/icon48.png" alt="Agentcsx logo" class="footer-logo-img">
-          <span>agent<span class="gradient-text">csx</span></span>
-        </div>
-        <p>AI-powered client finding agent for LinkedIn. Built for sales professionals who want results, not busywork.</p>
-      </div>
-      <div class="footer-links">
-        <div class="footer-col">
-          <h4>Product</h4>
-          <a href="#features">Features</a>
-          <a href="#how-it-works">How It Works</a>
-          <a href="#faq">FAQ</a>
-          <a href="blog/">Blog</a>
-          <a href="#install">Install</a>
-        </div>
-        <div class="footer-col">
-          <h4>Legal</h4>
-          <!-- SEO #7: Fixed broken footer links -->
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="terms.html">Terms of Service</a>
-          <a href="support.html">Support</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <p>&copy; 2026 Agentcsx. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Navbar scroll effect
-    window.addEventListener('scroll', () => {
-      const navbar = document.getElementById('navbar');
-      navbar.classList.toggle('scrolled', window.scrollY > 50);
+/* ---------- connect: keep link lines clear of the centre logo ----------
+   Lines live in a stretched (preserveAspectRatio=none) viewBox, so their start
+   point is recomputed from live pixel sizes to begin just outside the 78px hub,
+   leaving a tight, even gap at any panel width. */
+(function trimConnectLines(){
+  const net = document.querySelector('.net');
+  if(!net) return;
+  const cx = 200, cy = 150;                       // viewBox centre = hub centre
+  function endOf(str){ const m = str && str.match(/L\s*([\d.]+)[ ,]+([\d.]+)/); return m ? [parseFloat(m[1]), parseFloat(m[2])] : null; }
+  function apply(){
+    const r = net.getBoundingClientRect();
+    if(!r.width) return;
+    const xs = r.width/400, ys = r.height/300;     // px per viewBox unit (axes differ)
+    const hub = document.getElementById('connectHub');
+    const clr = (hub ? hub.getBoundingClientRect().width/2 : 39) + 11; // px gap from centre
+    const a = clr/xs, b = clr/ys;                  // elliptical gap → circular in px
+    const startFor = (ex,ey)=>{
+      const dx = ex-cx, dy = ey-cy;
+      const s = 1/Math.sqrt((dx/a)**2 + (dy/b)**2);
+      return [(cx+dx*s).toFixed(1), (cy+dy*s).toFixed(1)];
+    };
+    net.querySelectorAll('.link-line').forEach(p=>{
+      const e = endOf(p.getAttribute('d')); if(!e) return;
+      const [sx,sy] = startFor(e[0],e[1]);
+      p.setAttribute('d', `M${sx} ${sy} L${e[0]} ${e[1]}`);
     });
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
+    net.querySelectorAll('animateMotion').forEach(am=>{
+      const e = endOf(am.getAttribute('path')); if(!e) return;
+      const [sx,sy] = startFor(e[0],e[1]);
+      am.setAttribute('path', `M${sx} ${sy} L${e[0]} ${e[1]}`);
     });
+  }
+  apply();
+  window.addEventListener('resize', apply);
+})();
 
-    // Animate on scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+/* ---------- scroll reveal + stage trigger ----------
+   Scenes replay every time they (re)enter the viewport: on exit we strip the
+   `in` state + cancel any running timers, so the next entry re-runs the whole
+   sequence from scratch instead of only firing once. */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      if(e.target.classList.contains('stage')) runStage(e.target);
+      if(e.target.dataset.count!==undefined) countUp(e.target);
+    } else {
+      // leaving view — reset so the animation can play again next time
+      if(e.target.classList.contains('stage')){ e.target.classList.remove('in'); resetStage(e.target); }
+      else if(e.target.dataset.count!==undefined){ e.target.textContent='0'; }
+      else { e.target.classList.remove('in'); }
+    }
+  });
+},{threshold:.28});
 
-    document.querySelectorAll('.feature-card, .step, .stat, .faq-item').forEach(el => {
-      el.classList.add('animate-in');
-      observer.observe(el);
-    });
-  </script>
+document.querySelectorAll('.reveal,.stage,.pstep,[data-count]').forEach(el=>io.observe(el));
+
+/* ---------- count-up ---------- */
+function countUp(el){
+  const target=+el.dataset.count; const dur=1400; const t0=performance.now();
+  function step(t){
+    const p=Math.min((t-t0)/dur,1);
+    el.textContent=Math.floor((1-Math.pow(1-p,3))*target).toLocaleString();
+    if(p<1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+/* ---------- per-stage scripted sequences ---------- */
+const playing=new WeakSet();            // guards against double-start while in view
+const stageTimers=new Map();            // stage -> [timer ids] so we can cancel on exit
+function addTimer(stage,id){ (stageTimers.get(stage)||stageTimers.set(stage,[]).get(stage)).push(id); }
+function clearTimers(stage){ (stageTimers.get(stage)||[]).forEach(id=>{clearTimeout(id);clearInterval(id);}); stageTimers.set(stage,[]); }
+
+function runStage(stage){
+  if(playing.has(stage)) return; playing.add(stage);   // already running this visit
+  clearTimers(stage);
+
+  if(stage.id==='find'){
+    const counts=['scanning 1,245 profiles…','matched 312 high-fit leads','3 HOT · 9 WARM ready'];
+    let i=0; const lbl=stage.querySelector('#scanCount');
+    const t=setInterval(()=>{ i++; if(i<counts.length){lbl.textContent=counts[i];} else clearInterval(t); },1400);
+    addTimer(stage,t);
+  }
+
+  if(stage.id==='pitch'){
+    const rows=stage.querySelectorAll('.chat-row');
+    const reply=stage.querySelector('#reply');
+    const typing=stage.querySelector('#typing').closest('.chat-row');
+    reply.style.display='none'; typing.style.display='';
+    const delays=[300,1300,2600];
+    rows.forEach((r,idx)=>{ if(r.id==='reply')return; addTimer(stage,setTimeout(()=>r.classList.add('in'), delays[idx]||0)); });
+    // after typing shows, swap to reply
+    addTimer(stage,setTimeout(()=>{ typing.style.display='none'; reply.style.display=''; reply.classList.add('in'); }, 4200));
+  }
+
+  if(stage.id==='post'){
+    const txt="Most “lead gen” is just spray-and-pray.\nWe rebuilt it as an agent that finds, connects, pitches & posts on its own. ";
+    const tag="#agentcsx";
+    const el=stage.querySelector('#typedText');
+    const card=stage.querySelector('#postCard');
+    el.innerHTML='<span class="cursor"></span>';
+    let i=0;
+    const tick=setInterval(()=>{
+      i++;
+      el.innerHTML=txt.slice(0,i).replace(/\n/g,'<br>')+'<span class="cursor"></span>';
+      if(i>=txt.length){
+        clearInterval(tick);
+        el.innerHTML=txt.replace(/\n/g,'<br>')+'<span class="hashtag">'+tag+'</span><span class="cursor"></span>';
+        addTimer(stage,setTimeout(()=>{ card.classList.add('in'); stage.querySelector('.post').classList.add('in');
+          card.querySelectorAll('[data-count]').forEach(countUp); }, 500));
+      }
+    }, 34);
+    addTimer(stage,tick);
+  }
+}
+
+/* reset a stage to its pre-animation state so runStage can replay it cleanly */
+function resetStage(stage){
+  playing.delete(stage);
+  clearTimers(stage);
+
+  if(stage.id==='find'){
+    const lbl=stage.querySelector('#scanCount'); if(lbl) lbl.textContent='scanning 1,245 profiles…';
+  }
+
+  if(stage.id==='pitch'){
+    stage.querySelectorAll('.chat-row').forEach(r=>r.classList.remove('in'));
+    const reply=stage.querySelector('#reply'); if(reply){ reply.style.display='none'; }
+    const typing=stage.querySelector('#typing'); if(typing){ const tr=typing.closest('.chat-row'); if(tr) tr.style.display=''; }
+  }
+
+  if(stage.id==='post'){
+    const el=stage.querySelector('#typedText'); if(el) el.innerHTML='<span class="cursor"></span>';
+    const card=stage.querySelector('#postCard'); if(card){ card.classList.remove('in'); card.querySelectorAll('[data-count]').forEach(b=>b.textContent='0'); }
+    const post=stage.querySelector('.post'); if(post) post.classList.remove('in');
+  }
+}
+</script>
 </body>
 </html>
