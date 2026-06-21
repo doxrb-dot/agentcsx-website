@@ -471,6 +471,27 @@
     /* no rotation: show the verb statically */
     .hero-title .rot-w{animation:none!important;opacity:1!important;transform:none!important;filter:none!important}
   }
+
+  /* ---------- video lightbox ---------- */
+  .vid-modal{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px}
+  .vid-modal[hidden]{display:none}
+  .vid-backdrop{position:absolute;inset:0;background:rgba(4,6,14,.82);backdrop-filter:blur(6px);
+    opacity:0;transition:opacity .28s var(--ease)}
+  .vid-box{position:relative;width:min(960px,100%);border-radius:16px;overflow:hidden;
+    box-shadow:0 40px 130px rgba(0,0,0,.7);border:1px solid var(--border);background:#000;
+    opacity:0;transform:scale(.96) translateY(8px);transition:opacity .3s var(--ease),transform .3s var(--ease)}
+  .vid-modal.open .vid-backdrop{opacity:1}
+  .vid-modal.open .vid-box{opacity:1;transform:none}
+  .vid-frame{position:relative;width:100%;aspect-ratio:16/9}
+  .vid-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+  .vid-close{position:absolute;top:-14px;right:-14px;z-index:2;width:40px;height:40px;border-radius:50%;
+    display:grid;place-items:center;cursor:pointer;color:#fff;background:#1b2233;border:1px solid var(--border);
+    box-shadow:0 6px 22px rgba(0,0,0,.5);transition:transform .2s var(--ease),background .2s var(--ease)}
+  .vid-close:hover{transform:scale(1.08);background:#252e44}
+  @media(max-width:560px){
+    .vid-modal{padding:14px}
+    .vid-close{top:-12px;right:-2px}
+  }
 </style>
 </head>
 <body>
@@ -519,7 +540,7 @@
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
         Add to your browser
       </a>
-      <a class="btn btn-ghost" href="https://www.youtube.com/watch?v=bZJwOpCeD7g" target="_blank" rel="noopener">
+      <a class="btn btn-ghost" id="watchBtn" href="https://www.youtube.com/watch?v=bZJwOpCeD7g" target="_blank" rel="noopener">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         Watch how it works
       </a>
@@ -813,6 +834,17 @@
   </div>
 </footer>
 
+<!-- Video lightbox: plays the demo in-page without leaving the site -->
+<div class="vid-modal" id="vidModal" role="dialog" aria-modal="true" aria-label="Product demo video" hidden>
+  <div class="vid-backdrop" data-close></div>
+  <div class="vid-box">
+    <button class="vid-close" id="vidClose" aria-label="Close video">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="vid-frame" id="vidFrame"></div>
+  </div>
+</div>
+
 <script src="logo.js?v=3"></script>
 <script>
 /* ---------- animated logo ----------
@@ -871,6 +903,40 @@ document.getElementById('heroLogo').innerHTML = logoMark(182, true,  'h');
   word.textContent = '';
   setTimeout(type, 400);
 })();
+
+/* video lightbox — play the demo in-page instead of leaving the site */
+(function(){
+  const VIDEO_ID = 'bZJwOpCeD7g';
+  const btn = document.getElementById('watchBtn');
+  const modal = document.getElementById('vidModal');
+  const frame = document.getElementById('vidFrame');
+  const closeBtn = document.getElementById('vidClose');
+  if(!btn || !modal || !frame) return;
+  let lastFocus = null;
+  function open(){
+    lastFocus = document.activeElement;
+    frame.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + VIDEO_ID +
+      '?autoplay=1&rel=0&modestbranding=1&playsinline=1" title="agentcsx demo" ' +
+      'allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share" ' +
+      'allowfullscreen></iframe>';
+    modal.hidden = false;
+    // next frame -> trigger transition
+    requestAnimationFrame(()=>{ requestAnimationFrame(()=>modal.classList.add('open')); });
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+  function close(){
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(()=>{ modal.hidden = true; frame.innerHTML = ''; }, 300); // unmount iframe -> stops audio
+    if(lastFocus) lastFocus.focus();
+  }
+  btn.addEventListener('click', e=>{ e.preventDefault(); open(); });
+  closeBtn.addEventListener('click', close);
+  modal.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click', close));
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape' && !modal.hidden) close(); });
+})();
+
 document.getElementById('navMark').innerHTML  = logoMark(34,  false, 'n');
 const connectHub = document.getElementById('connectHub');
 if(connectHub) connectHub.innerHTML = logoMark(78, false, 'c');
